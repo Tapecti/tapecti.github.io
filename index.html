@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox Portfolio</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0a0a0f;
+        color: #f0f0f0;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .header {
+        text-align: center;
+        padding: 30px;
+        z-index: 3;
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #ffd700;
+        vertical-align: middle;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    }
+
+    .header span {
+        margin-left: 20px;
+        font-size: 3em;
+        color: #ffd700;
+        vertical-align: middle;
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    }
+
+    .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 215, 0, 0.08);
+        animation: float linear infinite;
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) scale(0.6); opacity: 0; }
+        20% { opacity: 0.5; }
+        50% { opacity: 0.7; }
+        100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+    }
+
+    #controlsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto 20px auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .contributionsTitle {
+        font-weight: bold;
+        color: #ffd700;
+        user-select: none;
+    }
+
+    #controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .contactButton {
+        padding: 10px 16px;
+        background: #ffd700;
+        color: #0a0a0f;
+        font-weight: bold;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .contactButton:hover {
+        background: #ffcc00;
+        transform: scale(1.05);
+    }
+
+    .dropdown {
+        position: relative;
+        user-select: none;
+    }
+
+    .dropdown-selected {
+        padding: 10px 14px;
+        background: rgba(25, 20, 10, 0.9);
+        color: #ffd700;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    .dropdown-selected:hover {
+        border-color: rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+    }
+
+    .dropdown-options {
+        position: absolute;
+        top: 110%;
+        right: 0;
+        background: rgba(20, 20, 20, 0.95);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        min-width: 200px;
+        box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+        z-index: 5;
+    }
+
+    .dropdown-options.open {
+        display: flex;
+    }
+
+    .dropdown-options div {
+        padding: 10px 14px;
+        cursor: pointer;
+        color: #f0f0f0;
+        transition: background 0.2s;
+    }
+
+    .dropdown-options div:hover {
+        background: rgba(255, 215, 0, 0.15);
+        color: #ffd700;
+    }
+
+    #gameList {
+        position: relative;
+        z-index: 1;
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .gameItem {
+        background: rgba(25, 20, 10, 0.85);
+        border: 1px solid rgba(255, 215, 0, 0.25);
+        box-shadow: 0 0 6px rgba(255, 215, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gameItem:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+    }
+
+    .gameHeader {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .gameHeader img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 215, 0, 0.25);
+    }
+
+    .gameSummary {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    }
+
+    .gameSummary h2 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #ffd700;
+        text-shadow: 0 0 2px rgba(255, 215, 0, 0.3);
+        position: relative;
+    }
+
+    .creator {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        color: #bbbbbb;
+        cursor: pointer;
+    }
+
+    .underline {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        background: #ffffff;
+        width: 0;
+        transition: width 0.3s ease;
+    }
+
+    .likeBarContainer {
+        width: 70%;
+        height: 6px;
+        margin-top: 4px;
+        background: rgba(255, 215, 0, 0.05);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .likeBarFill {
+        height: 100%;
+        background: rgba(255, 215, 0, 0.6);
+        transition: width 0.3s;
+    }
+
+    .likeBarText {
+        font-size: 0.75em;
+        color: #ffd700;
+        margin-top: 2px;
+    }
+
+    .likeCounts {
+        margin-top: 2px;
+        font-size: 0.75em;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .timestamp {
+        font-size: 0.7em;
+        color: #888888;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .gameDetails {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 20px;
+    }
+
+    .gameDetails.open {
+        padding: 15px 20px 20px 20px;
+    }
+
+    .gameDetails p {
+        margin: 3px 0;
+        color: #dcdcdc;
+        white-space: pre-line;
+    }
+
+    .gameDetails strong {
+        color: #ffd700;
+    }
+
+    .playButton {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 10px 18px;
+        background: #ffd700;
+        color: #0a0a0f;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .playButton:hover {
+        background: #ffcc00;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+<div class="header" id="header">
+    <img id="userIcon" src="" alt="User Icon">
+    <span id="username"></span>
+</div>
+
+<div id="controlsContainer">
+    <div class="contributionsTitle">Contributions</div>
+    <div id="controls">
+        <div class="dropdown" id="sortDropdown">
+            <div class="dropdown-selected">Sort by Player Count</div>
+            <div class="dropdown-options">
+                <div data-value="playing">Sort by Player Count</div>
+                <div data-value="visits">Sort by Visits</div>
+                <div data-value="likeRatio">Sort by Like Ratio</div>
+                <div data-value="favorites">Sort by Favorites</div>
+            </div>
+        </div>
+        <a href="#" id="contactButton" class="contactButton">Contact</a>
+    </div>
+</div>
+
+<div id="gameList"></div>
+
+<script src="data.js" defer></script>
+<script defer>
+function createBubbles() {
+    const totalBubbles = 60;
+    const pageHeight = document.body.scrollHeight;
+    for (let i = 0; i < totalBubbles; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const size = Math.random() * 70 + 20;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${Math.random() * 100}vw`;
+        bubble.style.top = `${pageHeight + 200 + Math.random() * 400}px`;
+        bubble.style.animationDuration = `${15 + Math.random() * 20}s`;
+        document.body.appendChild(bubble);
+    }
+}
+
+function formatLocalDate(dateStr) {
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+    const hours = date.getHours().toString().padStart(2,'0');
+    const minutes = date.getMinutes().toString().padStart(2,'0');
+    return `${day}. ${month} ${year} ${hours}:${minutes}`;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    createBubbles();
+    await main();
+
+    const header = document.getElementById("header");
+    document.getElementById("username").textContent = window.username || "Username";
+    document.getElementById("userIcon").src = window.icon || "";
+    header.style.opacity = "1";
+
+    const contactButton = document.getElementById("contactButton");
+    if (window.contactLink) contactButton.href = window.contactLink;
+
+    const gameList = document.getElementById("gameList");
+    const gameData = window.gameData;
+    const gameCards = [];
+
+    for (const placeId in gameData) {
+        const game = gameData[placeId];
+        if (!game) continue;
+
+        let thumbnailUrl = '';
+        try {
+            const response = await fetchGameThumbnail(game.id);
+            if (response?.data?.[0]?.imageUrl) thumbnailUrl = response.data[0].imageUrl;
+        } catch {}
+
+        const totalVotes = Math.max(0, game.upVotes) + Math.max(0, game.downVotes);
+        const likeRatio = totalVotes > 0 ? Math.round(Math.max(0, Math.min(100, (Math.max(0, game.upVotes)/totalVotes)*100))) : 0;
+        const genreDisplay = [game.genre, game.genre_l1, game.genre_l2].filter(v => v && v !== 'All').join(" / ") || "Unknown";
+        const timestampStr = game.updated ? formatLocalDate(game.updated) : "";
+
+        const gameElement = document.createElement("div");
+        gameElement.className = "gameItem";
+        gameElement.dataset.playing = game.playing;
+        gameElement.dataset.visits = game.visits;
+        gameElement.dataset.likeRatio = likeRatio;
+        gameElement.dataset.favorites = game.favoritedCount;
+        gameElement.innerHTML = `
+            <div class="gameHeader">
+                <img src="${thumbnailUrl}" alt="${game.name}">
+                <div class="gameSummary">
+                    <h2>${game.name}<span class="timestamp">${timestampStr}</span></h2>
+                    <p style="margin:2px 0;"><strong>Visits:</strong> ${game.visits.toLocaleString()}</p>
+                    <p style="margin:2px 0;"><strong>Currently Playing:</strong> ${game.playing.toLocaleString()}</p>
+                    <p class="creator">${game.creator.name}<span class="underline"></span></p>
+                    <div class="likeBarContainer">
+                        <div class="likeBarFill" style="width:${likeRatio}%;"></div>
+                    </div>
+                    <span class="likeBarText">${likeRatio}%</span>
+                    <p class="likeCounts">Likes: ${Math.max(0, game.upVotes).toLocaleString()} &nbsp;&nbsp; Dislikes: ${Math.max(0, game.downVotes).toLocaleString()}</p>
+                </div>
+            </div>
+            <div class="gameDetails">
+                <p><strong>Genre:</strong> ${genreDisplay}</p>
+                <p><strong>Favorites:</strong> ${game.favoritedCount.toLocaleString()}</p>
+                <p><strong>Description:</strong><br>${(game.description || '').replace(/\\n/g,'<br>')}</p>
+                <a class="playButton" href="https://www.roblox.com/games/${placeId}/" target="_blank">Play Game</a>
+            </div>
+        `;
+
+        const creatorElement = gameElement.querySelector(".creator");
+        const underlineElement = creatorElement.querySelector(".underline");
+
+       creatorElement.addEventListener("mouseenter", () => {
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            const style = getComputedStyle(creatorElement);
+            context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+            const textWidth = context.measureText(creatorElement.textContent).width;
+            underlineElement.style.width = textWidth + "px";
+        });
+
+        creatorElement.addEventListener("mouseleave", () => {
+            underlineElement.style.width = "0";
+        });
+
+        creatorElement.addEventListener("click", () => {
+            const type = game.creator.type || "User";
+            const id = game.creator.id;
+            const url = type.toLowerCase() === "group" 
+                ? `https://www.roblox.com/communities/${id}/Seaside-Seraph#!/about`
+                : `https://www.roblox.com/users/${id}/profile`;
+            window.open(url, "_blank");
+        });
+
+        const details = gameElement.querySelector(".gameDetails");
+        gameElement.addEventListener("click", e => {
+            if (e.target.classList.contains("playButton") || e.target.classList.contains("creator")) return;
+            if (details.classList.contains("open")) {
+                details.style.maxHeight = null;
+                details.classList.remove("open");
+            } else {
+                details.classList.add("open");
+                details.style.maxHeight = details.scrollHeight + "px";
+            }
+        });
+
+        gameList.appendChild(gameElement);
+        gameCards.push(gameElement);
+    }
+
+    function sortCards(key) {
+        const sorted = [...gameCards].sort((a,b) => Number(b.dataset[key]) - Number(a.dataset[key]));
+        sorted.forEach(card => gameList.appendChild(card));
+    }
+
+    const dropdown = document.getElementById("sortDropdown");
+    const selected = dropdown.querySelector(".dropdown-selected");
+    const options = dropdown.querySelector(".dropdown-options");
+
+    selected.addEventListener("click", () => options.classList.toggle("open"));
+    options.querySelectorAll("div").forEach(option => {
+        option.addEventListener("click", () => {
+            const key = option.dataset.value;
+            selected.textContent = option.textContent;
+            options.classList.remove("open");
+            sortCards(key);
+        });
+    });
+
+    sortCards("playing");
+});
+</script>
+</body>
+</html>
