@@ -169,6 +169,11 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
+            max-height: 200px;
+        }
+
+        .gameItem.expanded {
+            max-height: 1000px;
         }
 
         .gameItem:hover {
@@ -292,6 +297,7 @@
             border-radius: 6px;
             transition: background 0.3s, transform 0.2s;
             text-align: center;
+            width: 100%;
         }
 
         .playButton:hover {
@@ -343,11 +349,6 @@
                 margin: 2px 0 0 0;
             }
 
-            .playButton {
-                width: 100%;
-                padding: 10px 0;
-            }
-
             .timestamp {
                 display: none;
             }
@@ -355,8 +356,16 @@
             .gameDetails {
                 padding: 8px 10px;
             }
+
+            .gameItem {
+                max-height: 180px;
+            }
+
+            .gameItem.expanded {
+                max-height: 1000px;
+            }
         }
-    </style>
+        </style>
 </head>
 <body>
     <div class="header" id="header">
@@ -387,9 +396,11 @@
         function createBubbles() {
             const totalBubbles = 60;
             const pageHeight = document.body.scrollHeight;
-            for (let i = 0; i < totalBubbles; i++) {
+
+            for (let index = 0; index < totalBubbles; index++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
+
                 const size = Math.random() * 70 + 20;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
@@ -407,6 +418,7 @@
             const year = date.getFullYear();
             const hours = date.getHours().toString().padStart(2,'0');
             const minutes = date.getMinutes().toString().padStart(2,'0');
+
             return `${day}. ${month} ${year} ${hours}:${minutes}`;
         }
 
@@ -431,106 +443,108 @@
                 if (!game) continue;
 
                 let thumbnailUrl = '';
+
                 try {
                     const response = await fetchGameThumbnail(game.id);
                     if (response?.data?.[0]?.imageUrl) thumbnailUrl = response.data[0].imageUrl;
                 } catch {}
+                    const totalVotes = Math.max(0, game.upVotes) + Math.max(0, game.downVotes);
+                    const likeRatio = totalVotes > 0 ? Math.round(Math.max(0, Math.min(100, (Math.max(0, game.upVotes)/totalVotes)*100))) : 0;
+                    const genreDisplay = [game.genre, game.genre_l1, game.genre_l2].filter(v => v && v !== 'All').join(" / ") || "Unknown";
 
-                const totalVotes = Math.max(0, game.upVotes) + Math.max(0, game.downVotes);
-                const likeRatio = totalVotes > 0 ? Math.round(Math.max(0, Math.min(100, (Math.max(0, game.upVotes)/totalVotes)*100))) : 0;
-                const genreDisplay = [game.genre, game.genre_l1, game.genre_l2].filter(v => v && v !== 'All').join(" / ") || "Unknown";
-
-                const gameElement = document.createElement("div");
-                gameElement.className = "gameItem";
-                gameElement.dataset.playing = game.playing;
-                gameElement.dataset.visits = game.visits;
-                gameElement.dataset.likeRatio = likeRatio;
-                gameElement.dataset.favorites = game.favoritedCount;
-                gameElement.innerHTML = `
-                    <div class="gameHeader">
-                        <img src="${thumbnailUrl}" alt="${game.name}">
-                        <div class="gameSummary">
-                            <h2>${game.name}<span class="timestamp">${game.updated ? formatLocalDate(game.updated) : ""}</span></h2>
-                            <p style="margin:2px 0;"><strong>Visits:</strong> ${game.visits.toLocaleString()}</p>
-                            <p style="margin:2px 0;"><strong>Currently Playing:</strong> ${game.playing.toLocaleString()}</p>
-                            <p class="creator">${game.creator.name}<span class="underline"></span></p>
-                            <div class="likeBarContainer">
-                                <div class="likeBarFill" style="width:${likeRatio}%;"></div>
+                    const gameElement = document.createElement("div");
+                    gameElement.className = "gameItem";
+                    gameElement.dataset.playing = game.playing;
+                    gameElement.dataset.visits = game.visits;
+                    gameElement.dataset.likeRatio = likeRatio;
+                    gameElement.dataset.favorites = game.favoritedCount;
+                    gameElement.innerHTML = `
+                        <div class="gameHeader">
+                            <img src="${thumbnailUrl}" alt="${game.name}">
+                            <div class="gameSummary">
+                                <h2>${game.name}<span class="timestamp"></span></h2>
+                                <p style="margin:2px 0;"><strong>Visits:</strong> ${game.visits.toLocaleString()}</p>
+                                <p style="margin:2px 0;"><strong>Currently Playing:</strong> ${game.playing.toLocaleString()}</p>
+                                <p class="creator">${game.creator.name}<span class="underline"></span></p>
+                                <div class="likeBarContainer">
+                                    <div class="likeBarFill" style="width:${likeRatio}%;"></div>
+                                </div>
+                                <span class="likeBarText">${likeRatio}%</span>
+                                <p class="likeCounts">Likes: ${Math.max(0, game.upVotes).toLocaleString()} &nbsp;&nbsp; Dislikes: ${Math.max(0, game.downVotes).toLocaleString()}</p>
                             </div>
-                            <span class="likeBarText">${likeRatio}%</span>
-                            <p class="likeCounts">Likes: ${Math.max(0, game.upVotes).toLocaleString()} &nbsp;&nbsp; Dislikes: ${Math.max(0, game.downVotes).toLocaleString()}</p>
                         </div>
-                    </div>
-                    <div class="gameDetails">
-                        <p><strong>Genre:</strong> ${genreDisplay}</p>
-                        <p><strong>Favorites:</strong> ${game.favoritedCount.toLocaleString()}</p>
-                        <p><strong>Description:</strong><br>${(game.description || '').replace(/\n/g,'<br>')}</p>
-                        <a class="playButton" href="https://www.roblox.com/games/${placeId}/" target="_blank">Play Game</a>
-                    </div>
-                `;
+                        <div class="gameDetails">
+                            <p><strong>Genre:</strong> ${genreDisplay}</p>
+                            <p><strong>Favorites:</strong> ${game.favoritedCount.toLocaleString()}</p>
+                            <p><strong>Description:</strong><br>${(game.description || '').replace(/\n/g,'<br>')}</p>
+                            <a class="playButton" href="https://www.roblox.com/games/${placeId}/" target="_blank">Play Game</a>
+                        </div>
+                    `;
 
-                const creatorElement = gameElement.querySelector(".creator");
-                const underlineElement = creatorElement.querySelector(".underline");
+                    const creatorElement = gameElement.querySelector(".creator");
+                    const underlineElement = creatorElement.querySelector(".underline");
 
-                creatorElement.addEventListener("mouseenter", () => {
-                    const canvas = document.createElement("canvas");
-                    const context = canvas.getContext("2d");
-                    const style = getComputedStyle(creatorElement);
-                    context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
-                    const textWidth = context.measureText(creatorElement.textContent).width;
-                    underlineElement.style.width = textWidth + "px";
+                    creatorElement.addEventListener("mouseenter", () => {
+                        const canvas = document.createElement("canvas");
+                        const context = canvas.getContext("2d");
+                        const style = getComputedStyle(creatorElement);
+                        context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+                        const textWidth = context.measureText(creatorElement.textContent).width;
+                        underlineElement.style.width = textWidth + "px";
+                    });
+
+                    creatorElement.addEventListener("mouseleave", () => {
+                        underlineElement.style.width = "0";
+                    });
+
+                    creatorElement.addEventListener("click", () => {
+                        const type = game.creator.type || "User";
+                        const id = game.creator.id;
+                        const url = type.toLowerCase() === "group" 
+                            ? `https://www.roblox.com/communities/${id}/Seaside-Seraph#!/about`
+                            : `https://www.roblox.com/users/${id}/profile`;
+                        window.open(url, "_blank");
+                    });
+
+                    const details = gameElement.querySelector(".gameDetails");
+                    gameElement.addEventListener("click", e => {
+                        if (e.target.classList.contains("playButton") || e.target.classList.contains("creator")) return;
+                        if (details.classList.contains("open")) {
+                            details.style.maxHeight = null;
+                            details.classList.remove("open");
+                            gameElement.classList.remove("expanded");
+                        } else {
+                            details.classList.add("open");
+                            details.style.maxHeight = details.scrollHeight + "px";
+                            gameElement.classList.add("expanded");
+                        }
+                    });
+
+                    gameList.appendChild(gameElement);
+                    gameCards.push(gameElement);
+                }
+
+                function sortCards(key) {
+                    const sorted = [...gameCards].sort((a,b) => Number(b.dataset[key]) - Number(a.dataset[key]));
+                    sorted.forEach(card => gameList.appendChild(card));
+                }
+
+                const dropdown = document.getElementById("sortDropdown");
+                const selected = dropdown.querySelector(".dropdown-selected");
+                const options = dropdown.querySelector(".dropdown-options");
+
+                selected.addEventListener("click", () => options.classList.toggle("open"));
+                options.querySelectorAll("div").forEach(option => {
+                    option.addEventListener("click", () => {
+                        const key = option.dataset.value;
+                        selected.textContent = option.textContent;
+                        options.classList.remove("open");
+                        sortCards(key);
+                    });
                 });
 
-                creatorElement.addEventListener("mouseleave", () => {
-                    underlineElement.style.width = "0";
-                });
-
-                creatorElement.addEventListener("click", () => {
-                    const type = game.creator.type || "User";
-                    const id = game.creator.id;
-                    const url = type.toLowerCase() === "group" 
-                        ? `https://www.roblox.com/communities/${id}/Seaside-Seraph#!/about`
-                        : `https://www.roblox.com/users/${id}/profile`;
-                    window.open(url, "_blank");
-                });
-
-                const details = gameElement.querySelector(".gameDetails");
-                gameElement.addEventListener("click", e => {
-                    if (e.target.classList.contains("playButton") || e.target.classList.contains("creator")) return;
-                    if (details.classList.contains("open")) {
-                        details.style.maxHeight = null;
-                        details.classList.remove("open");
-                    } else {
-                        details.classList.add("open");
-                        details.style.maxHeight = details.scrollHeight + "px";
-                    }
-                });
-
-                gameList.appendChild(gameElement);
-                gameCards.push(gameElement);
-            }
-
-            function sortCards(key) {
-                const sorted = [...gameCards].sort((a,b) => Number(b.dataset[key]) - Number(a.dataset[key]));
-                sorted.forEach(card => gameList.appendChild(card));
-            }
-
-            const dropdown = document.getElementById("sortDropdown");
-            const selected = dropdown.querySelector(".dropdown-selected");
-            const options = dropdown.querySelector(".dropdown-options");
-
-            selected.addEventListener("click", () => options.classList.toggle("open"));
-            options.querySelectorAll("div").forEach(option => {
-                option.addEventListener("click", () => {
-                    const key = option.dataset.value;
-                    selected.textContent = option.textContent;
-                    options.classList.remove("open");
-                    sortCards(key);
-                });
+                sortCards("playing");
             });
-
-            sortCards("playing");
-        });
         </script>
     </body>
 </html>
