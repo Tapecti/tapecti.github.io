@@ -282,22 +282,60 @@
   height: 1.05rem;
 }
 
+/* Phones: four to a row, and the card rises from the bottom instead of hanging off one avatar. */
 @media (max-width: 520px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem 0.5rem;
+  }
+
   .trigger {
-    width: 6rem;
+    width: 100%;
+    gap: 0.45rem;
   }
 
   .avatar {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.25rem;
+    height: 4.25rem;
   }
 
   .current {
-    width: 1.7rem;
-    height: 1.7rem;
+    right: -0.15rem;
+    bottom: -0.15rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    box-shadow: 0 0 0 2px var(--bg);
   }
 
-  .card {
-    width: min(20rem, calc(100vw - 2.5rem));
+  .current svg {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .nameRow {
+    gap: 0.2rem;
+    font-size: var(--t-s);
+  }
+
+  .verified {
+    font-size: 0.8rem;
+  }
+
+  .role {
+    margin-top: -0.3rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .card,
+  .card[data-align="end"] {
+    position: fixed;
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    transform-origin: bottom center;
   }
 }

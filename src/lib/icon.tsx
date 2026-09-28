@@ -3,9 +3,9 @@ import { profile } from "@/config/profile";
 import { getProfileData } from "./profile-data";
 
 /**
- * Every site icon: my Roblox headshot on the light avatar stage, where a dark
- * avatar still reads at 16px. Drawn at build time so it follows the avatar; the
- * initial stands in if Roblox doesn't answer.
+ * Every site icon: my Roblox headshot on Crazay purple, which a dark avatar
+ * stands out against at 16px on light and dark tabs alike. Drawn at build time
+ * so it follows the avatar; the initial stands in if Roblox doesn't answer.
  */
 export async function renderIcon(size: number, radius: number): Promise<ImageResponse> {
   const { user } = await getProfileData();
@@ -19,8 +19,8 @@ export async function renderIcon(size: number, radius: number): Promise<ImageRes
           alignItems: "center",
           justifyContent: "center",
           borderRadius: radius,
-          background: "#e3e6ea",
-          color: "#101216",
+          backgroundImage: "linear-gradient(160deg, #9d80ff 0%, #6a45f0 100%)",
+          color: "#ffffff",
           fontSize: size * 0.62,
           fontWeight: 700,
         }}

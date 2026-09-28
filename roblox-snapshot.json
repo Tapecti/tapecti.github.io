@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-09-28T16:07:18.738Z",
+  "savedAt": "2026-09-28T16:38:24.365Z",
   "user": {
     "id": 5299412295,
     "name": "Tapecti",
@@ -38,7 +38,7 @@
       "name": "Goody Foody",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 124093,
+      "memberCount": 124088,
       "rank": {
         "name": "Member",
         "value": 1
@@ -74,7 +74,7 @@
       "name": "Super Fun Noob Games",
       "verified": true,
       "ownerId": 23899869,
-      "memberCount": 1024761,
+      "memberCount": 1024727,
       "rank": {
         "name": "Admin",
         "value": 254
@@ -110,7 +110,7 @@
       "name": "Big Debt Studios",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 61782,
+      "memberCount": 61763,
       "rank": {
         "name": "Member",
         "value": 1
@@ -122,7 +122,7 @@
       "name": "Debt Builders",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 976844,
+      "memberCount": 976808,
       "rank": {
         "name": "Member",
         "value": 1
@@ -192,9 +192,9 @@
     "my-asmr-house": {
       "universeId": "10586746293",
       "description": "My ASMR House 🏠🎧\n\n☀️ Daytime\nYou’re safe… for now.\n🛋️ Drag ASMR furniture back to your house\n🚪 Unlock new rooms\n💰 Earn cash from your ASMR collection\n\n🌙 But at night...\nThe Monsters are outside… \n🔒 Stay inside your ASMR House\n👹 Don’t let the Monsters find you!\n\n👍 LIKE + ⭐ FAVORITE to survive the next update!",
-      "playing": 6622,
-      "visits": 10066072,
-      "favorites": 47225,
+      "playing": 6466,
+      "visits": 10082119,
+      "favorites": 47290,
       "created": "2026-07-28T17:41:23.639Z",
       "updated": "2026-09-25T18:59:18.244Z",
       "maxPlayers": 7,
@@ -210,15 +210,15 @@
         "https://tr.rbxcdn.com/180DAY-ec3517cb717105b490e8d0f55851e057/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-8c6f70ce238745f869a979575a2b4bbd/768/432/Image/Png/noFilter"
       ],
-      "likes": 26207,
+      "likes": 26227,
       "dislikes": 1588
     },
     "driving-test": {
       "universeId": "9273584416",
       "description": "🚗 Welcome to Driving Test! Can you pass the ultimate driving exam? 🚗 \n\nDrive through challenging courses, avoid obstacles, and park perfectly to complete each stage. Every level tests your precision, control, and patience. This obby is made to make you a better driver!\n\n⭐ Unlock new cars\n🚘 Complete challenging parking courses\n🏆 Beat every stage\n🔥 Can you pass the final test?\n\n\nTags: Drive Car Challenge OBBY",
-      "playing": 315,
-      "visits": 14321798,
-      "favorites": 582262,
+      "playing": 311,
+      "visits": 14323132,
+      "favorites": 582301,
       "created": "2025-11-30T13:46:11.667Z",
       "updated": "2026-09-12T14:45:16.825Z",
       "maxPlayers": 8,
@@ -322,8 +322,8 @@
     },
     "clean-the-rooms": {
       "universeId": "10400326382",
-      "playing": 5,
-      "visits": 334912,
+      "playing": 6,
+      "visits": 334930,
       "favorites": 1457,
       "created": "2026-06-26T23:10:59.495Z",
       "updated": "2026-09-22T02:13:47.076Z",
@@ -367,7 +367,7 @@
       "universeId": "9223627423",
       "description": "🧱 STACK BATTLES – 1v1 Precision Showdown! ⚔️\n\nFace off in a fast-paced duel where every block matters.\nTake turns dropping pieces and try to build the tallest, cleanest tower without messing up.\nMiss the edge? Your stack gets smaller.\nPlay smarter, stay steady, and out-stack your opponent to win!\n\nPerfect timing. Zero mistakes. One champion. 🏆",
       "playing": 0,
-      "visits": 3932717,
+      "visits": 3932718,
       "favorites": 395612,
       "created": "2025-11-22T16:11:23.01Z",
       "updated": "2026-09-16T16:13:53.89Z",
@@ -430,7 +430,7 @@
     "2048-tycoon": {
       "universeId": "9004570118",
       "playing": 0,
-      "visits": 13102,
+      "visits": 13103,
       "favorites": 1264,
       "created": "2025-10-22T16:32:25.857Z",
       "updated": "2025-10-31T17:02:10.33Z",
@@ -684,9 +684,9 @@
     }
   },
   "studio": {
-    "playing": 134818,
-    "visits": 6525691733,
+    "playing": 139488,
+    "visits": 6525898475,
     "games": 29,
-    "updatedAt": "2026-09-28T16:06:52.443Z"
+    "updatedAt": "2026-09-28T16:38:24.191Z"
   }
 }

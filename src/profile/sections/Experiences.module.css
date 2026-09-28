@@ -266,8 +266,22 @@
 }
 
 @media (max-width: 600px) {
+  .featureBar {
+    gap: 1.5rem;
+    margin-top: 1.1rem;
+  }
+
+  /* The featured game's four figures as an even 2×2, not three and a straggler. */
+  .featureBar .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+    width: 100%;
+  }
+
   .grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
   }
 
   .row {

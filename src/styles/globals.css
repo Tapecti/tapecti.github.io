@@ -95,6 +95,13 @@
   }
 }
 
+/* Phones: sections sit closer, so the page reads as one profile rather than separate slides. */
+@media (max-width: 600px) {
+  :root {
+    --section: 4rem;
+  }
+}
+
 *,
 *::before,
 *::after {

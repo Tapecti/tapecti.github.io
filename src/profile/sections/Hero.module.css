@@ -158,3 +158,34 @@
     max-height: 30rem;
   }
 }
+
+/* Phones: a wider, shorter stage so the name is on the first screen, and the counts as an even 2×2. */
+@media (max-width: 600px) {
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .stage {
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+  }
+
+  .role {
+    margin-top: 1.25rem;
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+  }
+
+  .actions > * {
+    flex: 1;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+    margin-top: 2rem;
+  }
+}

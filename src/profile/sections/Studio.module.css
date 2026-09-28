@@ -90,7 +90,37 @@
     border-radius: 12px;
   }
 
+  /* Phones: the three figures side by side in one card, not three tall panels. */
   .list {
-    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--surface);
+  }
+
+  .panel {
+    padding: 1.1rem 0.9rem;
+    border-radius: 0;
+    background: none;
+  }
+
+  .panel + .panel {
+    box-shadow: inset 1px 0 0 var(--line);
+  }
+
+  .value {
+    font-size: var(--t-l);
+    letter-spacing: -0.02em;
+  }
+
+  .title {
+    margin-top: 0.35rem;
+    font-size: var(--t-cap);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .detail {
+    display: none;
   }
 }
