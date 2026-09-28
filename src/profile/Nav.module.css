@@ -1,0 +1,93 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: var(--nav);
+  background: var(--bg);
+  box-shadow: 0 1px 0 transparent;
+  transition: box-shadow 200ms linear;
+}
+
+.nav[data-scrolled] {
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* Never squeezed: the name and its badge keep their spacing on the narrowest phones. */
+  flex: none;
+}
+
+.identityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.identityLink:hover .name {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.headshot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--stage);
+  object-fit: cover;
+}
+
+.name {
+  font-size: var(--t-m);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.verified {
+  font-size: 1.05rem;
+  flex: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 2.25rem);
+}
+
+/* The theme toggle sits close to the call to action. */
+.links > :last-child {
+  margin-left: calc(0.75rem - clamp(1rem, 2.4vw, 2.25rem));
+}
+
+.link {
+  font-size: var(--t-s);
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: color 180ms linear;
+}
+
+.link:hover {
+  color: var(--ink);
+}
+
+.cta {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 760px) {
+  .link {
+    display: none;
+  }
+}
+

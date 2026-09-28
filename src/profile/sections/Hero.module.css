@@ -1,0 +1,160 @@
+.hero {
+  padding-block: clamp(1rem, 2vw, 2rem) var(--section);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: end;
+}
+
+/*
+ * The avatar stands on a plain stage, the way Roblox presents it. A fixed
+ * shape rather than a viewport height, so it never stretches into a tall
+ * strip on narrow windows.
+ */
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  background: var(--avatar-stage);
+  overflow: hidden;
+}
+
+/* The whole avatar, head to feet and every accessory, never cropped, standing low on its stage. */
+.avatar {
+  position: absolute;
+  inset: 6%;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  object-position: center 80%;
+}
+
+.avatarFallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.profile {
+  padding-bottom: 0.5rem;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: var(--t-3xl);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.nameLink:hover,
+.handleLink:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.12em;
+}
+
+.verified {
+  flex: none;
+  font-size: 0.42em;
+  margin-top: 0.08em;
+}
+
+.handle {
+  margin-top: 0.75rem;
+  font-size: var(--t-l);
+  color: var(--ink-2);
+}
+
+.role {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--t-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* The studio as a small chip under the role. */
+.studioLine {
+  margin-top: 0.75rem;
+}
+
+.studio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.3em 0.8em 0.3em 0.45em;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--studio) 14%, transparent);
+  color: var(--studio);
+  font-size: var(--t-s);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background-color 200ms var(--ease);
+}
+
+.studio img {
+  width: 1.35em;
+  height: auto;
+}
+
+.studio:hover {
+  background: color-mix(in srgb, var(--studio) 24%, transparent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Profile counts, in the place Roblox shows friends and followers. */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem clamp(2rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.5rem;
+  box-shadow: 0 -1px 0 var(--line);
+}
+
+.stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.stats dt {
+  margin-top: 0.2rem;
+  font-size: var(--t-cap);
+  color: var(--ink-2);
+}
+
+.stats dd {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .stage {
+    aspect-ratio: 1 / 1;
+    max-height: 30rem;
+  }
+}

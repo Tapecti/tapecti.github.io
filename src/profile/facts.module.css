@@ -1,0 +1,39 @@
+/* Thumb and count, bar, thumb and count: one line, sized by its parent. */
+.votes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.thumb {
+  flex: none;
+  width: 1.05em;
+  height: 1.05em;
+  fill: currentColor;
+}
+
+.track {
+  position: relative;
+  display: block;
+  flex: none;
+  width: var(--votes-track, 3rem);
+  height: 4px;
+  border-radius: 2px;
+  background: color-mix(in srgb, currentColor 18%, transparent);
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: currentColor;
+}

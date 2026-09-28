@@ -1,0 +1,28 @@
+.line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  font-size: var(--t-s);
+  color: var(--ink-2);
+}
+
+.icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 6px;
+  background: var(--stage);
+  object-fit: contain;
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.verified {
+  flex: none;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,83 @@
+/* Code is the one place a monospace face appears. */
+
+.figure {
+  min-width: 0;
+}
+
+.bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  font-size: var(--t-s);
+}
+
+.filename {
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy {
+  color: var(--ink-2);
+}
+
+.copy:hover {
+  color: var(--ink);
+}
+
+.pre {
+  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  background: var(--paper-2);
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  tab-size: 4;
+  color: var(--ink);
+  scrollbar-width: thin;
+}
+
+.pre code {
+  display: block;
+  min-width: max-content;
+  font: inherit;
+}
+
+.line {
+  display: block;
+  min-height: 1.7em;
+}
+
+.comment {
+  color: #6f6b64;
+}
+.string {
+  color: #3f6b4a;
+}
+.number,
+.constant {
+  color: #9a4a26;
+}
+.keyword {
+  color: var(--ink);
+  font-weight: 600;
+}
+.builtin {
+  color: #2f5577;
+}
+.function,
+.type {
+  color: var(--ink);
+}
+.operator {
+  color: var(--ink-2);
+}
+
+.caption {
+  margin-top: 0.75rem;
+  font-size: var(--t-s);
+  color: var(--ink-2);
+}

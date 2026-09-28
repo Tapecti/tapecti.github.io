@@ -1,0 +1,96 @@
+.section {
+  padding-bottom: var(--section);
+}
+
+/* Logo and name, above the studio-wide figures. */
+.head {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0.7rem;
+  border-radius: 14px;
+  background: var(--stage);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.name {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.name a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+}
+
+.about {
+  margin-top: 0.3rem;
+  font-size: var(--t-s);
+  color: var(--ink-2);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.value {
+  font-size: clamp(2.75rem, 1.6rem + 3.4vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.title {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--t-l);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.detail {
+  margin-top: 0.25rem;
+  font-size: var(--t-s);
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .head {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+  }
+
+  .logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 12px;
+  }
+
+  .list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

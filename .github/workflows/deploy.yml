@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Roblox figures are read at build time, so rebuild through the day to keep them current.
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Work out the site's URL
+        id: url
+        env:
+          # Set as a repository variable (Settings → Secrets and variables → Actions → Variables) once
+          # the same domain is saved under Settings → Pages. Leave it unset to stay on github.io.
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+        run: |
+          # A custom domain and a repository named <owner>.github.io are served at the root; anything else sits under /<repo>.
+          if [ -n "$CUSTOM_DOMAIN" ]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://$CUSTOM_DOMAIN" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${{ github.repository_owner }}.github.io" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.url.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.url.outputs.site_url }}
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

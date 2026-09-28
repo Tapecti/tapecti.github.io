@@ -1,0 +1,61 @@
+.footer {
+  background: var(--dark);
+  color: var(--on-dark-2);
+  font-size: var(--t-s);
+}
+
+/* One quiet line: who, what the numbers are, where else to go. */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding-block: 1.75rem;
+  box-shadow: 0 -1px 0 var(--dark-line);
+}
+
+.owner {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.name {
+  font-weight: 700;
+  color: var(--on-dark);
+}
+
+.note {
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: var(--on-dark);
+  transition: color 180ms linear;
+}
+
+.links a:hover {
+  color: var(--on-dark-2);
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 0.6rem;
+  }
+
+  .note {
+    text-align: left;
+  }
+
+  .links {
+    justify-content: flex-start;
+  }
+}

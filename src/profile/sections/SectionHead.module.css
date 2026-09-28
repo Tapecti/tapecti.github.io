@@ -1,0 +1,18 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.title {
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.detail {
+  font-size: var(--t-m);
+  color: var(--ink-2);
+}

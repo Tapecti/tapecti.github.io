@@ -1,0 +1,50 @@
+.section {
+  padding-bottom: var(--section);
+}
+
+.list {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.creation {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.title {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.summary {
+  margin-top: 0.6rem;
+  font-size: var(--t-l);
+  color: var(--ink-2);
+}
+
+.details {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.usedIn {
+  margin-top: 1.25rem;
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+
+.image {
+  width: 100%;
+  border-radius: var(--r-art);
+}
+
+@media (max-width: 900px) {
+  .creation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

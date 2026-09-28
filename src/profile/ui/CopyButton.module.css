@@ -1,0 +1,26 @@
+.button {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+/* Both words share one cell so the button never changes width. */
+.labels {
+  display: inline-grid;
+}
+
+.labels > span {
+  grid-area: 1 / 1;
+  transition: opacity 250ms linear;
+}
+
+.labels > span:last-child {
+  opacity: 0;
+}
+
+.button[data-copied] .labels > span:first-child {
+  opacity: 0;
+}
+
+.button[data-copied] .labels > span:last-child {
+  opacity: 1;
+}

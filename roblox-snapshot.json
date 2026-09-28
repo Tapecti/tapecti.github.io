@@ -1,0 +1,692 @@
+{
+  "savedAt": "2026-09-28T15:51:45.168Z",
+  "user": {
+    "id": 5299412295,
+    "name": "Tapecti",
+    "displayName": "Tapecti",
+    "verified": true,
+    "avatar": "https://tr.rbxcdn.com/30DAY-Avatar-562DEB39DB63558F5ACA5CE6A38347C4-Png/720/720/Avatar/Png/noFilter",
+    "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-562DEB39DB63558F5ACA5CE6A38347C4-Png/420/420/AvatarHeadshot/Png/noFilter"
+  },
+  "groups": {
+    "33549789": {
+      "id": 33549789,
+      "name": "King Ching",
+      "verified": false,
+      "ownerId": 382906892,
+      "memberCount": 756897,
+      "rank": {
+        "name": "Small Boss",
+        "value": 66
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-248622f45efca11ed7d2c5dea3511493/420/420/Image/Png/noFilter"
+    },
+    "34446421": {
+      "id": 34446421,
+      "name": "Experiment Groupz",
+      "verified": false,
+      "ownerId": 382906892,
+      "memberCount": 592,
+      "rank": {
+        "name": "Admin",
+        "value": 234
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-9f51b03e488beffc35765468c3507642/420/420/Image/Png/noFilter"
+    },
+    "35758741": {
+      "id": 35758741,
+      "name": "Goody Foody",
+      "verified": true,
+      "ownerId": 382906892,
+      "memberCount": 124070,
+      "rank": {
+        "name": "Member",
+        "value": 1
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-6a22615cb84a644fc4997fad4676664c/420/420/Image/Png/noFilter"
+    },
+    "35849039": {
+      "id": 35849039,
+      "name": "Cook Food",
+      "verified": false,
+      "ownerId": 423167524,
+      "memberCount": 18844,
+      "rank": {
+        "name": "Top Chefs",
+        "value": 249
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-d9914813da8c3fd2f9cbb8246f722eaf/420/420/Image/Png/noFilter"
+    },
+    "35982189": {
+      "id": 35982189,
+      "name": "Seaside Seraph",
+      "verified": false,
+      "ownerId": 5299412295,
+      "memberCount": 282,
+      "rank": {
+        "name": "Holder",
+        "value": 255
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-51830253017a62dcf9ab3bb63eccae4d/420/420/Image/Png/noFilter"
+    },
+    "44338751": {
+      "id": 44338751,
+      "name": "Super Fun Noob Games",
+      "verified": true,
+      "ownerId": 23899869,
+      "memberCount": 1024634,
+      "rank": {
+        "name": "Admin",
+        "value": 254
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-78c39ab0f575446b57c9b776c86471b2/420/420/Image/Png/noFilter"
+    },
+    "317560948": {
+      "id": 317560948,
+      "name": "David X Rats",
+      "verified": false,
+      "ownerId": 382906892,
+      "memberCount": 435,
+      "rank": {
+        "name": "Admin",
+        "value": 254
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-0210c539ed048037491e0f0f2c173ee9/420/420/Image/Png/noFilter"
+    },
+    "690583290": {
+      "id": 690583290,
+      "name": "Crazay Singh",
+      "verified": false,
+      "ownerId": 423167524,
+      "memberCount": 15449,
+      "rank": {
+        "name": "Admin",
+        "value": 200
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-ca3dd4576c8a9c0c372fcbf8473be74c/420/420/Image/Png/noFilter"
+    },
+    "869083473": {
+      "id": 869083473,
+      "name": "Big Debt Studios",
+      "verified": false,
+      "ownerId": 382906892,
+      "memberCount": 61690,
+      "rank": {
+        "name": "Member",
+        "value": 1
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-ce7d5a1b37b971a36c413f645ca773da/420/420/Image/Png/noFilter"
+    },
+    "1017743788": {
+      "id": 1017743788,
+      "name": "Debt Builders",
+      "verified": true,
+      "ownerId": 382906892,
+      "memberCount": 976700,
+      "rank": {
+        "name": "Member",
+        "value": 1
+      },
+      "icon": "https://tr.rbxcdn.com/180DAY-0210c539ed048037491e0f0f2c173ee9/420/420/Image/Png/noFilter"
+    }
+  },
+  "people": {
+    "23899869": {
+      "id": 23899869,
+      "name": "MustacheJoey",
+      "displayName": "joey",
+      "verified": true,
+      "followers": 10862,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C172BFE000283ABD9AF049431B449077-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "46415248": {
+      "id": 46415248,
+      "name": "dead3yex",
+      "displayName": "dead3ye",
+      "verified": true,
+      "followers": 61348,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-1140854C0B1B5EF5D0ACC583F8B8B9BE-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "91632145": {
+      "id": 91632145,
+      "name": "pedrogamer789",
+      "displayName": "SmokeBomb",
+      "verified": false,
+      "followers": 309,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B66E1D41769838D9A3BE8171750AC584-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "382906892": {
+      "id": 382906892,
+      "name": "BuzzWantMoney",
+      "displayName": "King",
+      "verified": true,
+      "followers": 3813,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F8355D723A6B1675C29C1183182D2868-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "486226211": {
+      "id": 486226211,
+      "name": "r_Slender",
+      "displayName": "Slender",
+      "verified": false,
+      "followers": 7610,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-5C8995D03A2A880F121C9371F850B93C-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "1470652660": {
+      "id": 1470652660,
+      "name": "andinations",
+      "displayName": "Gabriel",
+      "verified": true,
+      "followers": 59103,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-560DB690DAA4C0D3AFAFD022EF16B3BD-Png/420/420/AvatarHeadshot/Png/noFilter"
+    },
+    "4728895801": {
+      "id": 4728895801,
+      "name": "RyanDesignUI",
+      "displayName": "Ryan",
+      "verified": false,
+      "followers": 1091,
+      "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B5C600FEF02DB7652A7FD19172B7C777-Png/420/420/AvatarHeadshot/Png/noFilter"
+    }
+  },
+  "experiences": {
+    "my-asmr-house": {
+      "universeId": "10586746293",
+      "description": "My ASMR House 🏠🎧\n\n☀️ Daytime\nYou’re safe… for now.\n🛋️ Drag ASMR furniture back to your house\n🚪 Unlock new rooms\n💰 Earn cash from your ASMR collection\n\n🌙 But at night...\nThe Monsters are outside… \n🔒 Stay inside your ASMR House\n👹 Don’t let the Monsters find you!\n\n👍 LIKE + ⭐ FAVORITE to survive the next update!",
+      "playing": 6817,
+      "visits": 10057948,
+      "favorites": 47200,
+      "created": "2026-07-28T17:41:23.639Z",
+      "updated": "2026-09-25T18:59:18.244Z",
+      "maxPlayers": 7,
+      "genre": "Survival",
+      "creator": {
+        "id": 869083473,
+        "name": "Big Debt Studios",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-a3bff1a0f5fa23d63dec772ac650e634/768/432/Image/Png/noFilter",
+        "https://tr.rbxcdn.com/180DAY-ec3517cb717105b490e8d0f55851e057/768/432/Image/Png/noFilter",
+        "https://tr.rbxcdn.com/180DAY-8c6f70ce238745f869a979575a2b4bbd/768/432/Image/Png/noFilter"
+      ],
+      "likes": 26196,
+      "dislikes": 1588
+    },
+    "driving-test": {
+      "universeId": "9273584416",
+      "description": "🚗 Welcome to Driving Test! Can you pass the ultimate driving exam? 🚗 \n\nDrive through challenging courses, avoid obstacles, and park perfectly to complete each stage. Every level tests your precision, control, and patience. This obby is made to make you a better driver!\n\n⭐ Unlock new cars\n🚘 Complete challenging parking courses\n🏆 Beat every stage\n🔥 Can you pass the final test?\n\n\nTags: Drive Car Challenge OBBY",
+      "playing": 281,
+      "visits": 14321209,
+      "favorites": 582238,
+      "created": "2025-11-30T13:46:11.667Z",
+      "updated": "2026-09-12T14:45:16.825Z",
+      "maxPlayers": 8,
+      "genre": "Obby & Platformer",
+      "creator": {
+        "id": 44338751,
+        "name": "Super Fun Noob Games",
+        "type": "Group",
+        "verified": true
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-56fe2c7c08095c520dcf2704bcb9420a/768/432/Image/Png/noFilter",
+        "https://tr.rbxcdn.com/180DAY-6870126e6abc0b4e3901184ce44f0a86/768/432/Image/Png/noFilter"
+      ],
+      "likes": 14406,
+      "dislikes": 6743
+    },
+    "taco-bomb": {
+      "universeId": "9696270185",
+      "playing": 0,
+      "visits": 66139,
+      "favorites": 97,
+      "created": "2026-02-08T16:29:33.067Z",
+      "updated": "2026-06-13T14:15:00.075Z",
+      "maxPlayers": 20,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-a57e7760799bfd471043c2edacb1438b/768/432/Image/Png/noFilter"
+      ],
+      "likes": 31,
+      "dislikes": 10
+    },
+    "sail-a-boat": {
+      "universeId": "10312532082",
+      "description": "🚤 Watch your AI boats take control of the waves, race across open water, and earn rewards as they cruise in real time! Start with a small wooden boat in a calm bay and grow into a powerful fleet sailing across massive ocean circuits!\n\n🎮 GAME MECHANICS:\n\n🚤 Buy self-sailing boats that automatically race and earn rewards\n🌊 Unlock new sea routes with bigger waters and faster vessels\n📦 Smash floating crates for speed boosts and bonus rewards\n⚡ Upgrade Boat Speed, Crate Respawn Rate & Earnings Per Run\n\n✨ OTHER FEATURES:\n\n🏴‍☠️ Exclusive Pirate Ship (OP special boat!)\n💰 2x Speed & Reward boosts\n🏆 Global leaderboards\n🌊 Exciting circuits!\n\nJoin the group for updates! Don’t forget to ❤️ Like and ⭐ Favorite the game!",
+      "playing": 0,
+      "visits": 8627,
+      "favorites": 524,
+      "created": "2026-06-12T11:54:32.3Z",
+      "updated": "2026-08-18T17:52:48.967Z",
+      "maxPlayers": 8,
+      "genre": "Simulation",
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-029a3148933d7a92356ea3256007aa5d/768/432/Image/Png/noFilter"
+      ],
+      "likes": 13,
+      "dislikes": 8
+    },
+    "fire-the-cannon": {
+      "universeId": "9378760345",
+      "description": "Fire the Cannon is all about clean progression and satisfying power growth 🚀\n\n🎯 Fire your cannon, upgrade it, and watch the power grow!\n🔫 Shoot your cannon from your own plot and see the impact.\n⬆️ Upgrade power, radius, and coins multipliers to fire even stronger shots!\n💰 Earn currency over time and progress at your own pace.\n✨ Smooth, satisfying gameplay designed to feel good on every shot!\n\nRelax, upgrade, and enjoy the loop.",
+      "playing": 0,
+      "visits": 4103,
+      "favorites": 11,
+      "created": "2025-12-18T18:12:04.393Z",
+      "updated": "2026-01-07T18:07:01.397Z",
+      "maxPlayers": 6,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-388d2dbb1e6c7b64c020d821c9e842b4/768/432/Image/Png/noFilter"
+      ],
+      "likes": 8,
+      "dislikes": 4
+    },
+    "minesweeper": {
+      "universeId": "9077812742",
+      "description": "🧠 Uncover the board, avoid the bombs, and test your logic in this classic Minesweeper! Every click counts. Can you clear it all?\n\n💣 Classic Minesweeper gameplay in 3D\n🏆 Random difficulty\n⚡ Compete for the fastest clear times!",
+      "playing": 0,
+      "visits": 5024,
+      "favorites": 160,
+      "created": "2025-11-01T10:54:28.453Z",
+      "updated": "2025-11-11T17:40:06.853Z",
+      "maxPlayers": 5,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-47af3ac615fd1f59d049eecfa14fd1f4/768/432/Image/Png/noFilter"
+      ],
+      "likes": 12,
+      "dislikes": 9
+    },
+    "clean-the-rooms": {
+      "universeId": "10400326382",
+      "playing": 6,
+      "visits": 334893,
+      "favorites": 1457,
+      "created": "2026-06-26T23:10:59.495Z",
+      "updated": "2026-09-22T02:13:47.076Z",
+      "maxPlayers": 10,
+      "genre": "Simulation",
+      "creator": {
+        "id": 869083473,
+        "name": "Big Debt Studios",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-c48d42d45f1a6655ae7f73858aecebb6/768/432/Image/Png/noFilter"
+      ],
+      "likes": 135,
+      "dislikes": 119
+    },
+    "right-door-for-brainrots": {
+      "universeId": "9777782050",
+      "description": "Welcome to Right Door for Brainrots!\n\nChoose how far you want to go! 💀\nStay alive and collect many Brainrots! ⚡\nUpgrade your character and get more cash! 💸\nUpgrade your plot to unlock more slots and place extra characters! 🏗️\nThere is no limit to how many floors you can have! 🔢\nBuild your dream Brainrot empire! ⭐\n\nYour Brainrots earn cash OFFLINE! 💤",
+      "playing": 0,
+      "visits": 41634,
+      "favorites": 4215,
+      "created": "2026-02-22T09:15:16.65Z",
+      "updated": "2026-06-14T11:23:36.094Z",
+      "maxPlayers": 5,
+      "genre": "Simulation",
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-731a951482cc7ec1d33dddcc4490b928/768/432/Image/Png/noFilter"
+      ],
+      "likes": 17,
+      "dislikes": 15
+    },
+    "stack-battles": {
+      "universeId": "9223627423",
+      "description": "🧱 STACK BATTLES – 1v1 Precision Showdown! ⚔️\n\nFace off in a fast-paced duel where every block matters.\nTake turns dropping pieces and try to build the tallest, cleanest tower without messing up.\nMiss the edge? Your stack gets smaller.\nPlay smarter, stay steady, and out-stack your opponent to win!\n\nPerfect timing. Zero mistakes. One champion. 🏆",
+      "playing": 0,
+      "visits": 3932717,
+      "favorites": 395612,
+      "created": "2025-11-22T16:11:23.01Z",
+      "updated": "2026-09-16T16:13:53.89Z",
+      "maxPlayers": 20,
+      "creator": {
+        "id": 35849039,
+        "name": "Cook Food",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-03d39feeffef74a916c339341e782946/768/432/Image/Png/noFilter"
+      ],
+      "likes": 939,
+      "dislikes": 879
+    },
+    "scary-troll-tower": {
+      "universeId": "9129212968",
+      "description": "👋 Welcome to Scary Troll Tower!\n\nReach the top, become the fastest, and troll your friends! 🚨",
+      "playing": 0,
+      "visits": 17042,
+      "favorites": 1633,
+      "created": "2025-11-08T16:35:52.577Z",
+      "updated": "2025-11-16T13:56:26.943Z",
+      "maxPlayers": 10,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-2322681032ada9f6c8ccfd71538c3f85/768/432/Image/Png/noFilter"
+      ],
+      "likes": 8,
+      "dislikes": 2
+    },
+    "be-a-brainrot": {
+      "universeId": "9081318756",
+      "description": "Be a Brainrot!\n\nOpen Eggs Hatch Rare Brainrots\n\nClick to Earn Money!\n\n\nASMR, Fun, Simulator",
+      "playing": 0,
+      "visits": 5118,
+      "favorites": 331,
+      "created": "2025-11-01T18:51:59.757Z",
+      "updated": "2026-02-15T10:37:46.173Z",
+      "maxPlayers": 50,
+      "creator": {
+        "id": 690583290,
+        "name": "Crazay Singh",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-9219f578522b879850fc38951d0e00c7/768/432/Image/Png/noFilter",
+        "https://tr.rbxcdn.com/180DAY-95450e293cc81d2e1f6757b632e10310/768/432/Image/Png/noFilter"
+      ],
+      "likes": 16,
+      "dislikes": 1
+    },
+    "2048-tycoon": {
+      "universeId": "9004570118",
+      "playing": 0,
+      "visits": 13102,
+      "favorites": 1264,
+      "created": "2025-10-22T16:32:25.857Z",
+      "updated": "2025-10-31T17:02:10.33Z",
+      "maxPlayers": 8,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-307d10d85e67a1f2ac19bf344e16aa85/768/432/Image/Png/noFilter"
+      ],
+      "likes": 6,
+      "dislikes": 2
+    },
+    "get-off-the-road": {
+      "universeId": "8985210069",
+      "description": "Get Off The Road!\nHide in safe zones and time your moves carefully — make it to the end to win!\n👍**LIKE THE GAME FOR MORE UPDATES AND CODES!**👍",
+      "playing": 0,
+      "visits": 42804,
+      "favorites": 4305,
+      "created": "2025-10-19T16:15:50.447Z",
+      "updated": "2025-10-22T15:38:06.93Z",
+      "maxPlayers": 16,
+      "genre": "Survival",
+      "creator": {
+        "id": 33549789,
+        "name": "King Ching",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-ef29ca83ce239d677f8358676ef56dc1/768/432/Image/Png/noFilter"
+      ],
+      "likes": 68,
+      "dislikes": 19
+    },
+    "dont-get-stomped": {
+      "universeId": "8961247674",
+      "description": "🦶Don’t Get Stepped On!\nHide in safe zones and time your moves carefully — make it to the end to win!\n👍**LIKE THE GAME FOR MORE UPDATES AND CODES!**👍",
+      "playing": 0,
+      "visits": 204073,
+      "favorites": 24703,
+      "created": "2025-10-16T23:07:45.767Z",
+      "updated": "2025-10-25T16:33:42.323Z",
+      "maxPlayers": 16,
+      "genre": "Survival",
+      "creator": {
+        "id": 33549789,
+        "name": "King Ching",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-e9e1ceeec31867ab2a4561ea2bc64355/768/432/Image/Png/noFilter"
+      ],
+      "likes": 95,
+      "dislikes": 22
+    },
+    "easy-gun-obby": {
+      "universeId": "7546157453",
+      "description": "💥 Blast through this CRAZY recoil obby!\n🌀 Use your blaster to jump, fly & zoom past obstacles!\n🎯 Can you beat all the stages without falling?\n🔥 Easy to play, hard to master – a true pro obby!\n\n👍 Like the game & 🧑‍🤝‍🧑 join the group for updates + cool stuff!\n\nLet me know if you want to name the \"blaster\" something custom too (like \"Recoil Cannon\" or \"Boomstick\")!",
+      "playing": 0,
+      "visits": 61451,
+      "favorites": 46,
+      "created": "2025-04-16T00:54:44.523Z",
+      "updated": "2026-02-08T08:46:26.91Z",
+      "maxPlayers": 14,
+      "creator": {
+        "id": 35758741,
+        "name": "Goody Foody",
+        "type": "Group",
+        "verified": true
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-4d32269413167fb43a7d89513595345b/768/432/Image/Png/noFilter"
+      ],
+      "likes": 20,
+      "dislikes": 17
+    },
+    "2-player-iq-test": {
+      "universeId": "7651278908",
+      "description": "🧠 2-Player IQ Test Challenge! 🧠\n\n👯‍♂️Team up with a friend and put your brains to the test!\n🤔 Solve mind-bending puzzles together and see who’s the real genius!\n💥 Work as a duo or compete head-to-head—only the smartest will survive the challenge!\n\nStage 39 Blue = 1111 Red = 9999\n\n🎁 Join the Group & ❤️ Like the game for bonus skips and exclusive updates!\n🔥 New levels added regularly—think you can beat them all?",
+      "playing": 0,
+      "visits": 308480,
+      "favorites": 439,
+      "created": "2025-05-05T20:31:00.75Z",
+      "updated": "2025-08-07T14:14:26.463Z",
+      "maxPlayers": 12,
+      "genre": "Puzzle",
+      "creator": {
+        "id": 34446421,
+        "name": "Experiment Groupz",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-5f0a7cb26a0e7684c342cedb07c4d357/768/432/Image/Png/noFilter"
+      ],
+      "likes": 94,
+      "dislikes": 71
+    },
+    "shockwave": {
+      "universeId": "8107207720",
+      "description": "⚡ Shockwave is a fast-paced team game where players capture flags, outmaneuver opponents, and use grenades to shift the tide — all in dynamic, competitive rounds.\n\n🎯 Capture enemy flag  \n🛡️ Defend your base  \n💣 Tactical grenades only  \n🚀 Zipline movement  \n🤸‍♂️ Ragdoll physics  \n👥 Competitive multiplayer  \n\n💡 Tips  \n• Stick with teammates for cover  \n• Cut off runners using ziplines  \n• Use grenades to control space  \n• Watch for dropped flags  \n• Adapt to the maps — mobility wins  \n\n🎖️ Credits  \nGame by: @Tapecti\nThumnail & icon by: @dead3yex\nIcons: @gvesster\n\nInspired by classic Capture the Flag modes \nMade with care, optimized for fun ⚙️",
+      "playing": 0,
+      "visits": 973,
+      "favorites": 5,
+      "created": "2025-07-08T17:26:56.713Z",
+      "updated": "2025-08-04T05:41:41.417Z",
+      "maxPlayers": 12,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-f90a4cbad709b61a6555396866e14423/768/432/Image/Png/noFilter"
+      ],
+      "likes": 3,
+      "dislikes": 2
+    },
+    "ragdoll-cave": {
+      "universeId": "8324454863",
+      "playing": 0,
+      "visits": 11411,
+      "favorites": 79,
+      "created": "2025-08-02T07:58:33.133Z",
+      "updated": "2025-08-03T16:59:52.207Z",
+      "maxPlayers": 12,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-ad50c0b0fc1710fa378d479bef7ab5ab/768/432/Image/Png/noFilter"
+      ],
+      "likes": 17,
+      "dislikes": 20
+    },
+    "quick-play": {
+      "universeId": "8617797475",
+      "description": "🔵 Quick Play: Minigames\nJump into fast-paced fun with a collection of quick and exciting challenges. Each round is a new test of skill, speed, and reflexes!\n\n🎯 Pick from a variety of minigames\n⚡ Play through short, action-packed rounds\n🏆 Aim for high scores and win streaks\n👥 Compete with friends or challenge yourself solo\n\n💡 Tips\n• Stay sharp - each game has unique rules\n• Practice makes perfect, don’t give up\n• Adapt quickly as the games change\n• Invite friends to make the competition even better\n\n🎖️ Credits\nGame by: @Tapecti\nThumbnail & icon by: @dead3yex",
+      "playing": 0,
+      "visits": 3121,
+      "favorites": 208,
+      "created": "2025-09-02T15:49:58.733Z",
+      "updated": "2025-10-09T15:16:30.74Z",
+      "maxPlayers": 20,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-924d156ec368a71c033a7f7bd2e38181/768/432/Image/Png/noFilter"
+      ],
+      "likes": 6,
+      "dislikes": 3
+    },
+    "the-button-2048": {
+      "universeId": "8590174425",
+      "description": "🔴 The Button: 2048\nPress the button to spawn 1’s, then drag and merge matching tiles to climb the number ladder.\nCan you build all the way up to 2048?\n\n🎯 Spawn 1’s with a button press\n🖱️ Drag and merge matching numbers\n🔢 Watch tiles combine into higher values\n🏆 Challenge yourself to reach the biggest number\n👥 Play solo or compete with friends for the highest merge\n\n💡 Tips\n• Don’t let the board get too crowded\n• Merge quickly to make space\n• Plan ahead - combos save time\n• Challenge friends to see who gets the highest tile\n\n🎖️ Credits\nGame by: @Tapecti\nThumnail & icon by: @dead3yex",
+      "playing": 0,
+      "visits": 6220,
+      "favorites": 469,
+      "created": "2025-08-30T16:13:48.833Z",
+      "updated": "2025-10-12T14:10:23.413Z",
+      "maxPlayers": 10,
+      "creator": {
+        "id": 35982189,
+        "name": "Seaside Seraph",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-307d10d85e67a1f2ac19bf344e16aa85/768/432/Image/Png/noFilter"
+      ],
+      "likes": 10,
+      "dislikes": 1
+    },
+    "steal-a-baby-aura": {
+      "universeId": "9310728449",
+      "description": "Steal the Auras from powerful Aura Faces and RUN!\nSurvive as long as you can while holding the aura — the longer you last, the more points you earn. Don’t get caught… or you lose it all.\n\n✨ NEW UPDATE ✨ at 1K Likes\n\n👍 Like the game to show support!\n⭐ Favorite the game so you never miss an update!\n\nHave questions or suggestions? Join the group!",
+      "playing": 0,
+      "visits": 421501,
+      "favorites": 268,
+      "created": "2025-12-06T19:13:21.167Z",
+      "updated": "2026-09-15T19:11:27.195Z",
+      "maxPlayers": 12,
+      "genre": "Survival",
+      "creator": {
+        "id": 1017743788,
+        "name": "Debt Builders",
+        "type": "Group",
+        "verified": true
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-4bc96c6eca947d542127e8e40f81d9fd/768/432/Image/Png/noFilter"
+      ],
+      "likes": 131,
+      "dislikes": 43
+    },
+    "country-battles": {
+      "universeId": "9269295137",
+      "description": "🌎 COUNTRY BATTLES 🌎\n⚡ Test your brain vs real players!\n🏳️ Guess the country from its flag 🇯🇵🇫🇷🇧🇷 or answer tricky geography questions 🌍\n🔥 Fastest fingers win — one mistake and you’re out!\n🏆 Climb the leaderboards and prove you know more countries than anyone!\n👍 Like & favorite if you think you’re a geography master!",
+      "playing": 0,
+      "visits": 142829,
+      "favorites": 130,
+      "created": "2025-11-29T23:41:00.417Z",
+      "updated": "2026-01-22T16:56:28.337Z",
+      "maxPlayers": 20,
+      "genre": "Party & Casual",
+      "creator": {
+        "id": 35849039,
+        "name": "Cook Food",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-39feff8deb5e4a755504c2a5e2e2aa61/768/432/Image/Png/noFilter",
+        "https://tr.rbxcdn.com/180DAY-a2f812766ac6f82a30f6380faca1e6cb/768/432/Image/Png/noFilter"
+      ],
+      "likes": 52,
+      "dislikes": 67
+    },
+    "ride-troll-tower": {
+      "universeId": "9167714762",
+      "playing": 0,
+      "visits": 7421,
+      "favorites": 390,
+      "created": "2025-11-14T19:09:36.32Z",
+      "updated": "2026-01-01T11:13:48.067Z",
+      "maxPlayers": 10,
+      "creator": {
+        "id": 317560948,
+        "name": "David X Rats",
+        "type": "Group",
+        "verified": false
+      },
+      "images": [
+        "https://tr.rbxcdn.com/180DAY-0967e2beb2bd57b39aece129bc821942/768/432/Image/Png/noFilter"
+      ],
+      "likes": 3,
+      "dislikes": 8
+    }
+  },
+  "studio": {
+    "playing": 137205,
+    "visits": 6525580132,
+    "games": 29,
+    "updatedAt": "2026-09-28T15:51:39.201Z"
+  }
+}
