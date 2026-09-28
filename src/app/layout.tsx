@@ -3,6 +3,7 @@ import { Figtree, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { profile } from "@/config/profile";
 import { site } from "@/config/site";
+import { basePath } from "@/lib/paths";
 import { siteUrl } from "@/lib/seo";
 import "@/styles/globals.css";
 
@@ -17,6 +18,10 @@ export const metadata: Metadata = {
   applicationName: profile.displayName,
   creator: profile.displayName,
   robots: { index: true, follow: true },
+  icons: {
+    icon: { url: `${basePath}/icon.png`, type: "image/png", sizes: "64x64" },
+    apple: { url: `${basePath}/apple-icon.png`, type: "image/png", sizes: "180x180" },
+  },
 };
 
 export const viewport: Viewport = {

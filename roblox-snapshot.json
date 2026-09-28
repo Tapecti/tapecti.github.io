@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-09-28T15:51:45.168Z",
+  "savedAt": "2026-09-28T16:07:18.738Z",
   "user": {
     "id": 5299412295,
     "name": "Tapecti",
@@ -38,7 +38,7 @@
       "name": "Goody Foody",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 124070,
+      "memberCount": 124093,
       "rank": {
         "name": "Member",
         "value": 1
@@ -74,7 +74,7 @@
       "name": "Super Fun Noob Games",
       "verified": true,
       "ownerId": 23899869,
-      "memberCount": 1024634,
+      "memberCount": 1024761,
       "rank": {
         "name": "Admin",
         "value": 254
@@ -110,7 +110,7 @@
       "name": "Big Debt Studios",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 61690,
+      "memberCount": 61782,
       "rank": {
         "name": "Member",
         "value": 1
@@ -122,7 +122,7 @@
       "name": "Debt Builders",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 976700,
+      "memberCount": 976844,
       "rank": {
         "name": "Member",
         "value": 1
@@ -160,7 +160,7 @@
       "name": "BuzzWantMoney",
       "displayName": "King",
       "verified": true,
-      "followers": 3813,
+      "followers": 3814,
       "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F8355D723A6B1675C29C1183182D2868-Png/420/420/AvatarHeadshot/Png/noFilter"
     },
     "486226211": {
@@ -192,9 +192,9 @@
     "my-asmr-house": {
       "universeId": "10586746293",
       "description": "My ASMR House 🏠🎧\n\n☀️ Daytime\nYou’re safe… for now.\n🛋️ Drag ASMR furniture back to your house\n🚪 Unlock new rooms\n💰 Earn cash from your ASMR collection\n\n🌙 But at night...\nThe Monsters are outside… \n🔒 Stay inside your ASMR House\n👹 Don’t let the Monsters find you!\n\n👍 LIKE + ⭐ FAVORITE to survive the next update!",
-      "playing": 6817,
-      "visits": 10057948,
-      "favorites": 47200,
+      "playing": 6622,
+      "visits": 10066072,
+      "favorites": 47225,
       "created": "2026-07-28T17:41:23.639Z",
       "updated": "2026-09-25T18:59:18.244Z",
       "maxPlayers": 7,
@@ -210,15 +210,15 @@
         "https://tr.rbxcdn.com/180DAY-ec3517cb717105b490e8d0f55851e057/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-8c6f70ce238745f869a979575a2b4bbd/768/432/Image/Png/noFilter"
       ],
-      "likes": 26196,
+      "likes": 26207,
       "dislikes": 1588
     },
     "driving-test": {
       "universeId": "9273584416",
       "description": "🚗 Welcome to Driving Test! Can you pass the ultimate driving exam? 🚗 \n\nDrive through challenging courses, avoid obstacles, and park perfectly to complete each stage. Every level tests your precision, control, and patience. This obby is made to make you a better driver!\n\n⭐ Unlock new cars\n🚘 Complete challenging parking courses\n🏆 Beat every stage\n🔥 Can you pass the final test?\n\n\nTags: Drive Car Challenge OBBY",
-      "playing": 281,
-      "visits": 14321209,
-      "favorites": 582238,
+      "playing": 315,
+      "visits": 14321798,
+      "favorites": 582262,
       "created": "2025-11-30T13:46:11.667Z",
       "updated": "2026-09-12T14:45:16.825Z",
       "maxPlayers": 8,
@@ -322,8 +322,8 @@
     },
     "clean-the-rooms": {
       "universeId": "10400326382",
-      "playing": 6,
-      "visits": 334893,
+      "playing": 5,
+      "visits": 334912,
       "favorites": 1457,
       "created": "2026-06-26T23:10:59.495Z",
       "updated": "2026-09-22T02:13:47.076Z",
@@ -684,9 +684,9 @@
     }
   },
   "studio": {
-    "playing": 137205,
-    "visits": 6525580132,
+    "playing": 134818,
+    "visits": 6525691733,
     "games": 29,
-    "updatedAt": "2026-09-28T15:51:39.201Z"
+    "updatedAt": "2026-09-28T16:06:52.443Z"
   }
 }
