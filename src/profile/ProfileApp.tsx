@@ -101,6 +101,28 @@ export function ProfileApp({ data, initialExperienceId }: Props) {
     };
   }, []);
 
+  /* ── In-page links: scroll without a #section in the address bar ─ */
+
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="#"]') : null;
+      const target = link ? document.getElementById(decodeURIComponent(link.hash.slice(1))) : null;
+      if (!link || !target) return;
+      event.preventDefault();
+      // The page's scroll-behavior and scroll-padding still apply: smooth, clear of the nav, instant for reduced motion.
+      target.scrollIntoView({ block: "start" });
+      if (link.classList.contains("skip-link")) {
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+      }
+    };
+    // Older shared links like /#groups still land on their section; the hash is then dropped from the address.
+    if (window.location.hash) window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   /* ── Experience detail: URL, history, focus, scroll lock ─ */
 
   const openIdRef = useRef(openId);

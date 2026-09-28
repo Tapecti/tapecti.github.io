@@ -2,20 +2,41 @@
   padding-bottom: var(--section);
 }
 
-/* Logo and name, above the studio-wide figures. */
-.head {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
+/* One quiet panel in the site's own surface colour: the studio, then its games rolling past. */
+.card {
+  --card-pad: clamp(1.25rem, 3vw, 2.25rem);
+
+  /* Positioned, so the screen-reader labels on off-screen tiles are clipped too instead of widening the page. */
+  position: relative;
+  overflow: hidden;
+  padding: var(--card-pad);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+/* ── Name and the way to the studio's site ───────────── */
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  min-width: 0;
 }
 
 .logo {
   display: grid;
+  flex: none;
   place-items: center;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   padding: 0.7rem;
   border-radius: 14px;
   background: var(--stage);
@@ -31,12 +52,7 @@
   font-size: var(--t-xl);
   font-weight: 700;
   letter-spacing: -0.02em;
-}
-
-.name a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.14em;
+  line-height: 1.1;
 }
 
 .about {
@@ -45,82 +61,179 @@
   color: var(--ink-2);
 }
 
-.list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.5rem);
+.visit {
+  gap: 0.45rem;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  border-radius: 16px;
-  background: var(--surface);
+.visitIcon {
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
-.value {
-  font-size: clamp(2.75rem, 1.6rem + 3.4vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
+.identity {
+  min-width: 0;
 }
 
-.title {
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
-  font-size: var(--t-l);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
+/* ── Studio-wide figures: one quiet line under the name ─ */
 
-.detail {
-  margin-top: 0.25rem;
+/*
+ * Every figure starts with its own dot, and the row is shifted left by one
+ * dot's width inside a clipped box: whichever figure begins a line has its dot
+ * clipped away, so a wrapped line never starts with a stray "·".
+ */
+.figures {
+  --dot: 1.25em;
+  overflow: hidden;
+  margin-top: 0.4rem;
   font-size: var(--t-s);
   color: var(--ink-2);
 }
 
-@media (max-width: 760px) {
-  .head {
-    grid-template-columns: 3.75rem minmax(0, 1fr);
+.figureRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--dot) * -1);
+}
+
+.figure {
+  white-space: nowrap;
+}
+
+.figure::before {
+  content: "·";
+  display: inline-block;
+  width: var(--dot);
+  text-align: center;
+  color: var(--ink-3);
+}
+
+.figure strong {
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── The busiest games, rolling past ─────────────────── */
+
+.rollWrap {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  /* Runs to the panel's edges, under a soft fade at both ends. */
+  margin-inline: calc(var(--card-pad) * -1);
+}
+
+.roll {
+  --gap: 1rem;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--card-pad), #000 calc(100% - var(--card-pad)), transparent 100%);
+}
+
+/* Moved by the component a frame at a time; see useRoll in Studio.tsx. */
+.track {
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  padding-inline: var(--card-pad);
+  will-change: transform;
+}
+
+.gameItem {
+  flex: none;
+  width: clamp(10.5rem, 8rem + 6vw, 13.5rem);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameArt {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--stage);
+}
+
+.gameArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms var(--ease);
+}
+
+@media (hover: hover) {
+  .game:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.gameName {
+  margin-top: 0.5rem;
+  overflow: hidden;
+  font-size: var(--t-cap);
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gamePlaying {
+  margin-top: 0.1rem;
+  font-size: var(--t-cap);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Without motion: a plain row to swipe or scroll, and no duplicate copy. */
+@media (prefers-reduced-motion: reduce) {
+  .roll {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .track {
+    will-change: auto;
+  }
+
+  .gameItem[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    border-radius: 16px;
   }
 
   .logo {
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0.55rem;
     border-radius: 12px;
   }
 
-  /* Phones: the three figures side by side in one card, not three tall panels. */
-  .list {
-    gap: 0;
-    overflow: hidden;
-    border-radius: 16px;
-    background: var(--surface);
+  /* Logo beside the name; the figures and the line on the studio take the full width below. */
+  .brand {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.9rem;
+    width: 100%;
   }
 
-  .panel {
-    padding: 1.1rem 0.9rem;
-    border-radius: 0;
-    background: none;
+  .identity {
+    display: contents;
   }
 
-  .panel + .panel {
-    box-shadow: inset 1px 0 0 var(--line);
+  .figures,
+  .about {
+    grid-column: 1 / -1;
   }
 
-  .value {
-    font-size: var(--t-l);
-    letter-spacing: -0.02em;
+  .figures {
+    margin-top: 0.9rem;
   }
 
-  .title {
-    margin-top: 0.35rem;
-    font-size: var(--t-cap);
-    font-weight: 600;
-    color: var(--ink-2);
-  }
-
-  .detail {
-    display: none;
+  .visit {
+    width: 100%;
   }
 }

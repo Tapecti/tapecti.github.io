@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-09-28T16:38:24.365Z",
+  "savedAt": "2026-09-28T23:37:44.317Z",
   "user": {
     "id": 5299412295,
     "name": "Tapecti",
@@ -14,7 +14,7 @@
       "name": "King Ching",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 756897,
+      "memberCount": 756928,
       "rank": {
         "name": "Small Boss",
         "value": 66
@@ -38,7 +38,7 @@
       "name": "Goody Foody",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 124088,
+      "memberCount": 124351,
       "rank": {
         "name": "Member",
         "value": 1
@@ -50,7 +50,7 @@
       "name": "Cook Food",
       "verified": false,
       "ownerId": 423167524,
-      "memberCount": 18844,
+      "memberCount": 18843,
       "rank": {
         "name": "Top Chefs",
         "value": 249
@@ -74,7 +74,7 @@
       "name": "Super Fun Noob Games",
       "verified": true,
       "ownerId": 23899869,
-      "memberCount": 1024727,
+      "memberCount": 1026469,
       "rank": {
         "name": "Admin",
         "value": 254
@@ -110,7 +110,7 @@
       "name": "Big Debt Studios",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 61763,
+      "memberCount": 63176,
       "rank": {
         "name": "Member",
         "value": 1
@@ -122,7 +122,7 @@
       "name": "Debt Builders",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 976808,
+      "memberCount": 978216,
       "rank": {
         "name": "Member",
         "value": 1
@@ -144,7 +144,7 @@
       "name": "dead3yex",
       "displayName": "dead3ye",
       "verified": true,
-      "followers": 61348,
+      "followers": 61349,
       "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-1140854C0B1B5EF5D0ACC583F8B8B9BE-Png/420/420/AvatarHeadshot/Png/noFilter"
     },
     "91632145": {
@@ -160,7 +160,7 @@
       "name": "BuzzWantMoney",
       "displayName": "King",
       "verified": true,
-      "followers": 3814,
+      "followers": 3824,
       "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F8355D723A6B1675C29C1183182D2868-Png/420/420/AvatarHeadshot/Png/noFilter"
     },
     "486226211": {
@@ -168,7 +168,7 @@
       "name": "r_Slender",
       "displayName": "Slender",
       "verified": false,
-      "followers": 7610,
+      "followers": 7609,
       "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-5C8995D03A2A880F121C9371F850B93C-Png/420/420/AvatarHeadshot/Png/noFilter"
     },
     "1470652660": {
@@ -176,7 +176,7 @@
       "name": "andinations",
       "displayName": "Gabriel",
       "verified": true,
-      "followers": 59103,
+      "followers": 59113,
       "headshot": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-560DB690DAA4C0D3AFAFD022EF16B3BD-Png/420/420/AvatarHeadshot/Png/noFilter"
     },
     "4728895801": {
@@ -192,9 +192,9 @@
     "my-asmr-house": {
       "universeId": "10586746293",
       "description": "My ASMR House 🏠🎧\n\n☀️ Daytime\nYou’re safe… for now.\n🛋️ Drag ASMR furniture back to your house\n🚪 Unlock new rooms\n💰 Earn cash from your ASMR collection\n\n🌙 But at night...\nThe Monsters are outside… \n🔒 Stay inside your ASMR House\n👹 Don’t let the Monsters find you!\n\n👍 LIKE + ⭐ FAVORITE to survive the next update!",
-      "playing": 6466,
-      "visits": 10082119,
-      "favorites": 47290,
+      "playing": 4148,
+      "visits": 10448420,
+      "favorites": 48766,
       "created": "2026-07-28T17:41:23.639Z",
       "updated": "2026-09-25T18:59:18.244Z",
       "maxPlayers": 7,
@@ -206,19 +206,19 @@
         "verified": false
       },
       "images": [
+        "https://tr.rbxcdn.com/180DAY-43413d24888f986ecba69bd861d5a410/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-a3bff1a0f5fa23d63dec772ac650e634/768/432/Image/Png/noFilter",
-        "https://tr.rbxcdn.com/180DAY-ec3517cb717105b490e8d0f55851e057/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-8c6f70ce238745f869a979575a2b4bbd/768/432/Image/Png/noFilter"
       ],
-      "likes": 26227,
-      "dislikes": 1588
+      "likes": 26951,
+      "dislikes": 1621
     },
     "driving-test": {
       "universeId": "9273584416",
       "description": "🚗 Welcome to Driving Test! Can you pass the ultimate driving exam? 🚗 \n\nDrive through challenging courses, avoid obstacles, and park perfectly to complete each stage. Every level tests your precision, control, and patience. This obby is made to make you a better driver!\n\n⭐ Unlock new cars\n🚘 Complete challenging parking courses\n🏆 Beat every stage\n🔥 Can you pass the final test?\n\n\nTags: Drive Car Challenge OBBY",
-      "playing": 311,
-      "visits": 14323132,
-      "favorites": 582301,
+      "playing": 314,
+      "visits": 14350941,
+      "favorites": 583379,
       "created": "2025-11-30T13:46:11.667Z",
       "updated": "2026-09-12T14:45:16.825Z",
       "maxPlayers": 8,
@@ -233,8 +233,8 @@
         "https://tr.rbxcdn.com/180DAY-56fe2c7c08095c520dcf2704bcb9420a/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-6870126e6abc0b4e3901184ce44f0a86/768/432/Image/Png/noFilter"
       ],
-      "likes": 14406,
-      "dislikes": 6743
+      "likes": 14411,
+      "dislikes": 6745
     },
     "taco-bomb": {
       "universeId": "9696270185",
@@ -323,8 +323,8 @@
     "clean-the-rooms": {
       "universeId": "10400326382",
       "playing": 6,
-      "visits": 334930,
-      "favorites": 1457,
+      "visits": 335872,
+      "favorites": 1461,
       "created": "2026-06-26T23:10:59.495Z",
       "updated": "2026-09-22T02:13:47.076Z",
       "maxPlayers": 10,
@@ -367,8 +367,8 @@
       "universeId": "9223627423",
       "description": "🧱 STACK BATTLES – 1v1 Precision Showdown! ⚔️\n\nFace off in a fast-paced duel where every block matters.\nTake turns dropping pieces and try to build the tallest, cleanest tower without messing up.\nMiss the edge? Your stack gets smaller.\nPlay smarter, stay steady, and out-stack your opponent to win!\n\nPerfect timing. Zero mistakes. One champion. 🏆",
       "playing": 0,
-      "visits": 3932718,
-      "favorites": 395612,
+      "visits": 3932764,
+      "favorites": 395613,
       "created": "2025-11-22T16:11:23.01Z",
       "updated": "2026-09-16T16:13:53.89Z",
       "maxPlayers": 20,
@@ -430,8 +430,8 @@
     "2048-tycoon": {
       "universeId": "9004570118",
       "playing": 0,
-      "visits": 13103,
-      "favorites": 1264,
+      "visits": 13112,
+      "favorites": 1266,
       "created": "2025-10-22T16:32:25.857Z",
       "updated": "2025-10-31T17:02:10.33Z",
       "maxPlayers": 8,
@@ -473,7 +473,7 @@
       "universeId": "8961247674",
       "description": "🦶Don’t Get Stepped On!\nHide in safe zones and time your moves carefully — make it to the end to win!\n👍**LIKE THE GAME FOR MORE UPDATES AND CODES!**👍",
       "playing": 0,
-      "visits": 204073,
+      "visits": 204078,
       "favorites": 24703,
       "created": "2025-10-16T23:07:45.767Z",
       "updated": "2025-10-25T16:33:42.323Z",
@@ -516,7 +516,7 @@
       "universeId": "7651278908",
       "description": "🧠 2-Player IQ Test Challenge! 🧠\n\n👯‍♂️Team up with a friend and put your brains to the test!\n🤔 Solve mind-bending puzzles together and see who’s the real genius!\n💥 Work as a duo or compete head-to-head—only the smartest will survive the challenge!\n\nStage 39 Blue = 1111 Red = 9999\n\n🎁 Join the Group & ❤️ Like the game for bonus skips and exclusive updates!\n🔥 New levels added regularly—think you can beat them all?",
       "playing": 0,
-      "visits": 308480,
+      "visits": 308486,
       "favorites": 439,
       "created": "2025-05-05T20:31:00.75Z",
       "updated": "2025-08-07T14:14:26.463Z",
@@ -684,9 +684,83 @@
     }
   },
   "studio": {
-    "playing": 139488,
-    "visits": 6525898475,
+    "playing": 136808,
+    "visits": 6532475187,
     "games": 29,
-    "updatedAt": "2026-09-28T16:38:24.191Z"
+    "top": [
+      {
+        "name": "Fisch",
+        "url": "https://www.roblox.com/games/16732694052",
+        "image": "https://tr.rbxcdn.com/180DAY-0b48b36aaaebb05f29da4beb58790100/768/432/Image/Png/noFilter",
+        "playing": 66963
+      },
+      {
+        "name": "+1 Wings For Eggs",
+        "url": "https://www.roblox.com/games/80242821185181",
+        "image": "https://tr.rbxcdn.com/180DAY-dbf5baf48763550fcf43b922012ffa42/768/432/Image/Png/noFilter",
+        "playing": 22959
+      },
+      {
+        "name": "+1 Strength for Eggs",
+        "url": "https://www.roblox.com/games/98610101874791",
+        "image": "https://tr.rbxcdn.com/180DAY-edc04c724dd60792a63b84f41cfb3130/768/432/Image/Png/noFilter",
+        "playing": 19602
+      },
+      {
+        "name": "Pull An Egg",
+        "url": "https://www.roblox.com/games/70640255604878",
+        "image": "https://tr.rbxcdn.com/180DAY-a8b8d1edfc881661d2ccedf6d79b3b47/768/432/Image/Png/noFilter",
+        "playing": 9727
+      },
+      {
+        "name": "Drill for Eggs",
+        "url": "https://www.roblox.com/games/120656419209274",
+        "image": "https://tr.rbxcdn.com/180DAY-963d5735fd1106e9aedc2bc02abdba66/768/432/Image/Png/noFilter",
+        "playing": 4421
+      },
+      {
+        "name": "My ASMR House",
+        "url": "https://www.roblox.com/games/113460023824827",
+        "image": "https://tr.rbxcdn.com/180DAY-43413d24888f986ecba69bd861d5a410/768/432/Image/Png/noFilter",
+        "playing": 4153
+      },
+      {
+        "name": "Escape Waves For Lucky Blocks",
+        "url": "https://www.roblox.com/games/119579217517090",
+        "image": "https://tr.rbxcdn.com/180DAY-f4223fe8af3bcebb764f5202fa42c9bd/768/432/Image/Png/noFilter",
+        "playing": 1930
+      },
+      {
+        "name": "Become Hungry Worm",
+        "url": "https://www.roblox.com/games/127415661078736",
+        "image": "https://tr.rbxcdn.com/180DAY-0cf83b6ed4a84b7b26232d9b4629a51b/768/432/Image/Png/noFilter",
+        "playing": 1399
+      },
+      {
+        "name": "Monkey Bomb Tag",
+        "url": "https://www.roblox.com/games/108843562394237",
+        "image": "https://tr.rbxcdn.com/180DAY-87421ad44d0b84b8a59ce68fe06713b9/768/432/Image/Png/noFilter",
+        "playing": 1158
+      },
+      {
+        "name": "Steal A Seed For Bees",
+        "url": "https://www.roblox.com/games/87026033799342",
+        "image": "https://tr.rbxcdn.com/180DAY-993527203c41dad5bca875ff7ce90309/768/432/Image/Png/noFilter",
+        "playing": 964
+      },
+      {
+        "name": "Squishy Dumplings Farm",
+        "url": "https://www.roblox.com/games/90447679404950",
+        "image": "https://tr.rbxcdn.com/180DAY-4b29613276478c98b4c91e585d65639f/768/432/Image/Png/noFilter",
+        "playing": 591
+      },
+      {
+        "name": "Pull Lucky Blocks",
+        "url": "https://www.roblox.com/games/80861715191104",
+        "image": "https://tr.rbxcdn.com/180DAY-2a1d0ca38f0b0be48633fa6f2d7a8837/768/432/Image/Png/noFilter",
+        "playing": 572
+      }
+    ],
+    "updatedAt": "2026-09-29T12:06:42.559Z"
   }
 }

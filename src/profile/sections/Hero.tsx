@@ -3,7 +3,6 @@
 import { profile } from "@/config/profile";
 import { site } from "@/config/site";
 import { experiences } from "@/data/projects";
-import { studio } from "@/data/studio";
 import { formatCompact, formatExact, formatPeak } from "@/lib/format";
 import { topPeak } from "@/lib/peak";
 import { resolveHref, shown } from "@/lib/placeholder";
@@ -57,17 +56,6 @@ export function Hero() {
           <p className={styles.role} {...enter(3)}>
             {site.role}
           </p>
-          {studio && (
-            <p className={styles.studioLine} {...enter(3)}>
-              <a href="#studio" className={styles.studio}>
-                {studio.logo && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={studio.logo} alt="" width={20} height={14} />
-                )}
-                {studio.name}
-              </a>
-            </p>
-          )}
 
           <div className={styles.actions} {...enter(4)}>
             <a href="#contact" className="button button-primary">

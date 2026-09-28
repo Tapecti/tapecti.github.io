@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type MouseEvent } from "react";
+import { createPortal } from "react-dom";
 import { formatExact } from "@/lib/format";
 import type { CollaboratorProfile } from "@/lib/profile-data";
 import { DiscordLogo, RobloxLogo } from "../BrandIcons";
@@ -11,6 +12,21 @@ import { VerifiedBadge } from "../VerifiedBadge";
 import styles from "./Collaborators.module.css";
 
 const CARD_WIDTH_PX = 320;
+/** Matches the stylesheet's phone breakpoint, where the card becomes a sheet along the bottom of the screen. */
+const SHEET_QUERY = "(max-width: 520px)";
+
+/** Whether the card shows as a bottom sheet. Tracked live, so rotating a phone switches it. */
+function useSheet() {
+  const [sheet, setSheet] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia(SHEET_QUERY);
+    const update = () => setSheet(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  return sheet;
+}
 
 const listNames = (names: string[]) =>
   names.length <= 1 ? (names[0] ?? "") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
@@ -21,10 +37,16 @@ export function Collaborators() {
   const people = data.collaborators;
   const [openId, setOpenId] = useState<number | null>(null);
   const [align, setAlign] = useState<"start" | "end">("start");
+  const sheet = useSheet();
 
   useEffect(() => {
     if (openId === null) return;
     const close = () => setOpenId(null);
+    // Phones resize as their address bar slides away mid-scroll; only a real width change closes the card.
+    const openedWidth = window.innerWidth;
+    const onResize = () => {
+      if (window.innerWidth !== openedWidth) close();
+    };
     // Anything outside this person's own avatar and card dismisses it.
     const onPointer = (event: PointerEvent) => {
       const person = event.target instanceof Element ? event.target.closest("[data-person]") : null;
@@ -36,12 +58,12 @@ export function Collaborators() {
     document.addEventListener("pointerdown", onPointer);
     document.addEventListener("keydown", onKey);
     window.addEventListener("blur", close);
-    window.addEventListener("resize", close);
+    window.addEventListener("resize", onResize);
     return () => {
       document.removeEventListener("pointerdown", onPointer);
       document.removeEventListener("keydown", onKey);
       window.removeEventListener("blur", close);
-      window.removeEventListener("resize", close);
+      window.removeEventListener("resize", onResize);
     };
   }, [openId]);
 
@@ -68,6 +90,56 @@ export function Collaborators() {
               .filter((group) => group.ownerId === person.id)
               .map((group) => group.name);
             const robloxUrl = `https://www.roblox.com/users/${person.id}/profile`;
+
+            const card = isOpen && (
+              <div
+                id={`collaborator-${person.id}`}
+                className={styles.card}
+                data-align={align}
+                data-sheet={sheet || undefined}
+                data-person={person.id}
+                data-highlight={person.highlight || undefined}
+                role="group"
+                aria-label={person.displayName}
+              >
+                <div className={styles.cardHead}>
+                  {person.headshot && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className={styles.cardAvatar} src={person.headshot} alt="" width={48} height={48} />
+                  )}
+                  <div className={styles.cardIdentity}>
+                    <p className={styles.cardName}>
+                      <span>{person.displayName}</span>
+                      {person.verified && <VerifiedBadge className={styles.verified} label="Verified Roblox account" tip />}
+                    </p>
+                    <p className={styles.cardHandle}>@{person.name}</p>
+                    {person.current && <p className={styles.cardCurrent}>Current collaborator</p>}
+                  </div>
+                </div>
+
+                <p className={styles.cardAbout}>{person.about}</p>
+
+                {(person.followers !== undefined || owns.length > 0) && (
+                  <ul className={styles.cardFacts}>
+                    {person.followers !== undefined && <li>{formatExact(person.followers)} followers on Roblox</li>}
+                    {owns.length > 0 && <li>Owner of {listNames(owns)}</li>}
+                  </ul>
+                )}
+
+                <div className={styles.cardActions}>
+                  {person.discordUrl && (
+                    <a href={person.discordUrl} target="_blank" rel="noopener noreferrer" className="button button-discord">
+                      <DiscordLogo className={styles.logo} />
+                      Discord<span className="visually-hidden"> profile of {person.displayName} (opens in a new tab)</span>
+                    </a>
+                  )}
+                  <a href={robloxUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
+                    <RobloxLogo className={styles.logo} />
+                    Roblox<span className="visually-hidden"> profile of {person.displayName} (opens in a new tab)</span>
+                  </a>
+                </div>
+              </div>
+            );
 
             return (
               <li key={person.id} data-person={person.id} className={styles.person} {...reveal(i)}>
@@ -104,53 +176,8 @@ export function Collaborators() {
                   <span className={styles.role}>{person.role}</span>
                 </button>
 
-                {isOpen && (
-                  <div
-                    id={`collaborator-${person.id}`}
-                    className={styles.card}
-                    data-align={align}
-                    data-highlight={person.highlight || undefined}
-                    role="group"
-                    aria-label={person.displayName}
-                  >
-                    <div className={styles.cardHead}>
-                      {person.headshot && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img className={styles.cardAvatar} src={person.headshot} alt="" width={48} height={48} />
-                      )}
-                      <div className={styles.cardIdentity}>
-                        <p className={styles.cardName}>
-                          <span>{person.displayName}</span>
-                          {person.verified && <VerifiedBadge className={styles.verified} label="Verified Roblox account" tip />}
-                        </p>
-                        <p className={styles.cardHandle}>@{person.name}</p>
-                        {person.current && <p className={styles.cardCurrent}>Current collaborator</p>}
-                      </div>
-                    </div>
-
-                    <p className={styles.cardAbout}>{person.about}</p>
-
-                    {(person.followers !== undefined || owns.length > 0) && (
-                      <ul className={styles.cardFacts}>
-                        {person.followers !== undefined && <li>{formatExact(person.followers)} followers on Roblox</li>}
-                        {owns.length > 0 && <li>Owner of {listNames(owns)}</li>}
-                      </ul>
-                    )}
-
-                    <div className={styles.cardActions}>
-                      {person.discordUrl && (
-                        <a href={person.discordUrl} target="_blank" rel="noopener noreferrer" className="button button-discord">
-                          <DiscordLogo className={styles.logo} />
-                          Discord<span className="visually-hidden"> profile of {person.displayName} (opens in a new tab)</span>
-                        </a>
-                      )}
-                      <a href={robloxUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
-                        <RobloxLogo className={styles.logo} />
-                        Roblox<span className="visually-hidden"> profile of {person.displayName} (opens in a new tab)</span>
-                      </a>
-                    </div>
-                  </div>
-                )}
+                {/* On phones the card leaves every animated ancestor, so it is pinned to the screen and never scrolls with the page. */}
+                {card && (sheet ? createPortal(card, document.body) : card)}
               </li>
             );
           })}

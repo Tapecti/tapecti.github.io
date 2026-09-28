@@ -6,7 +6,8 @@
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(2rem, 5vw, 5.5rem);
-  align-items: end;
+  /* The name, actions and counts sit level with the middle of the avatar's stage, not low against its foot. */
+  align-items: center;
 }
 
 /*
@@ -81,35 +82,6 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
-}
-
-/* The studio as a small chip under the role. */
-.studioLine {
-  margin-top: 0.75rem;
-}
-
-.studio {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  padding: 0.3em 0.8em 0.3em 0.45em;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--studio) 14%, transparent);
-  color: var(--studio);
-  font-size: var(--t-s);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  transition: background-color 200ms var(--ease);
-}
-
-.studio img {
-  width: 1.35em;
-  height: auto;
-}
-
-.studio:hover {
-  background: color-mix(in srgb, var(--studio) 24%, transparent);
 }
 
 .actions {
