@@ -30,8 +30,8 @@ const hostOf = (url: string) => {
  * nothing else (a re-render, a style change, a playback-rate change) can ever
  * restart or re-sync it, so tiles never jump. The loop length is measured from
  * where the second copy actually begins, so the wrap is exact. A mouse over the
- * row (or focus inside it) eases the speed to zero and back; it idles while off
- * screen, and stays still for reduced motion, where the row scrolls by hand.
+ * row (or keyboard focus inside it) eases the speed to zero and back; it idles
+ * while off screen, and stays still for reduced motion, where the row scrolls by hand.
  */
 function useRoll(rollRef: RefObject<HTMLDivElement | null>, trackRef: RefObject<HTMLUListElement | null>, count: number) {
   useEffect(() => {
@@ -82,28 +82,50 @@ function useRoll(rollRef: RefObject<HTMLDivElement | null>, trackRef: RefObject<
     const view = new IntersectionObserver(([entry]) => (entry?.isIntersecting ? start() : halt()));
     view.observe(roll);
 
-    const slow = (event: PointerEvent | FocusEvent) => {
-      if (event instanceof PointerEvent && event.pointerType !== "mouse") return;
-      target = 0;
+    /*
+     * Stopped only while a mouse is actually over the row, or keyboard focus is
+     * on one of its games. A game clicked open in a new tab keeps focus when you
+     * come back, but that is mouse focus, not :focus-visible, so it no longer
+     * holds the row still. Leaving the tab or window also forgets the hover,
+     * since the browser never reports the pointer leaving in that case.
+     */
+    let hovering = false;
+    const update = () => {
+      target = hovering || roll.querySelector(":focus-visible") ? 0 : 1;
     };
-    const resume = (event: PointerEvent | FocusEvent) => {
-      if (event instanceof PointerEvent && event.pointerType !== "mouse") return;
-      if (event instanceof FocusEvent && roll.contains(event.relatedTarget as Node | null)) return;
-      target = 1;
+    const onPointer = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse") return;
+      hovering = event.type !== "pointerleave";
+      update();
     };
-    roll.addEventListener("pointerenter", slow);
-    roll.addEventListener("pointerleave", resume);
-    roll.addEventListener("focusin", slow);
-    roll.addEventListener("focusout", resume);
+    // Focus has moved by the time the next frame runs, so read it then.
+    const onFocus = () => requestAnimationFrame(update);
+    const onAway = () => {
+      hovering = false;
+      update();
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") onAway();
+    };
+    roll.addEventListener("pointerenter", onPointer);
+    roll.addEventListener("pointermove", onPointer);
+    roll.addEventListener("pointerleave", onPointer);
+    roll.addEventListener("focusin", onFocus);
+    roll.addEventListener("focusout", onFocus);
+    window.addEventListener("blur", onAway);
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
       halt();
       view.disconnect();
       resize.disconnect();
-      roll.removeEventListener("pointerenter", slow);
-      roll.removeEventListener("pointerleave", resume);
-      roll.removeEventListener("focusin", slow);
-      roll.removeEventListener("focusout", resume);
+      roll.removeEventListener("pointerenter", onPointer);
+      roll.removeEventListener("pointermove", onPointer);
+      roll.removeEventListener("pointerleave", onPointer);
+      roll.removeEventListener("focusin", onFocus);
+      roll.removeEventListener("focusout", onFocus);
+      window.removeEventListener("blur", onAway);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [rollRef, trackRef, count]);
 }

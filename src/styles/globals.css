@@ -196,6 +196,49 @@ p {
   border: 0;
 }
 
+/*
+ * The 404 page. Kept here rather than in a module of its own: Next.js preloads
+ * the root not-found page's stylesheet on every page, where it then goes
+ * unused and the browser warns about it.
+ */
+.not-found {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-block: 3rem;
+}
+
+.not-found-inner {
+  width: 100%;
+  max-width: 34rem;
+}
+
+.not-found-code {
+  font-size: var(--t-cap);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.not-found-title {
+  margin-top: 0.75rem;
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.not-found-text {
+  margin-top: 0.9rem;
+  font-size: var(--t-l);
+  color: var(--ink-2);
+}
+
+.not-found-actions {
+  margin-top: 2rem;
+}
+
 .skip-link {
   position: fixed;
   top: 1rem;

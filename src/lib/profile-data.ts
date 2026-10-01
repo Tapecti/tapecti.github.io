@@ -70,7 +70,10 @@ export async function getProfileData(): Promise<ProfileData> {
   ]);
 
   // Live where Roblox answered, the last good answer where it didn't.
-  const user = liveUser ?? snapshot?.user ?? null;
+  // An image Roblox had not finished rendering keeps the last one it did, rather than leaving the initial in its place.
+  const user = liveUser
+    ? { ...liveUser, avatar: liveUser.avatar ?? snapshot?.user?.avatar, headshot: liveUser.headshot ?? snapshot?.user?.headshot }
+    : (snapshot?.user ?? null);
   const groups: Record<number, RobloxGroup> = {};
   for (const id of groupIds) {
     const group = liveGroups.get(id) ?? snapshot?.groups[id];
@@ -79,7 +82,9 @@ export async function getProfileData(): Promise<ProfileData> {
   const studio = liveStudio ?? snapshot?.studio ?? null;
   const people = new Map<number, RobloxPerson>();
   for (const id of personIds) {
-    const person = livePeople.get(id) ?? snapshot?.people[id];
+    const live = livePeople.get(id);
+    const saved = snapshot?.people[id];
+    const person = live ? { ...live, headshot: live.headshot ?? saved?.headshot } : saved;
     if (person) people.set(id, person);
   }
   const stats: StatsPayload = {
@@ -87,10 +92,12 @@ export async function getProfileData(): Promise<ProfileData> {
     experiences: Object.fromEntries(experiences.map((e) => [e.id, liveStats.experiences[e.id] ?? snapshot?.experiences[e.id]])),
   };
 
+  // Only a full answer, every image included, replaces the saved one.
   const complete =
     liveUser !== null &&
+    Boolean(liveUser.avatar && liveUser.headshot) &&
+    personIds.every((id) => livePeople.get(id)?.headshot) &&
     groupIds.every((id) => liveGroups.has(id)) &&
-    personIds.every((id) => livePeople.has(id)) &&
     experiences.every((e) => liveStats.experiences[e.id]);
   if (complete) {
     await writeSnapshot({

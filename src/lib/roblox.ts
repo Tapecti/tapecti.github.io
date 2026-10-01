@@ -137,6 +137,24 @@ export type RobloxUser = {
 
 type ThumbResponse = { data?: Array<{ targetId?: unknown; state?: unknown; imageUrl?: unknown }> };
 
+const THUMB_TRIES = 3;
+const THUMB_RETRY_MS = 1500;
+
+/**
+ * Roblox renders avatar images on demand and answers "Pending" until they are
+ * ready, so a build caught mid-render would otherwise get no image at all. Ask
+ * again a few times; the attempt number keeps a cached "Pending" from being reused.
+ */
+async function getThumbs(url: string, revalidateSeconds: number): Promise<ThumbResponse | null> {
+  let res: ThumbResponse | null = null;
+  for (let attempt = 0; attempt < THUMB_TRIES; attempt++) {
+    res = await getJson<ThumbResponse>(attempt ? `${url}&attempt=${attempt}` : url, revalidateSeconds);
+    if (!res?.data?.some((d) => d.state === "Pending")) return res;
+    await sleep(THUMB_RETRY_MS);
+  }
+  return res;
+}
+
 const firstImage = (res: ThumbResponse | null) => {
   const item = res?.data?.find((d) => d.state === "Completed" && typeof d.imageUrl === "string");
   return item ? (item.imageUrl as string) : undefined;
@@ -149,11 +167,11 @@ export async function fetchUser(userId: string, revalidateSeconds: number): Prom
       `https://users.roblox.com/v1/users/${userId}`,
       revalidateSeconds,
     ),
-    getJson<ThumbResponse>(
+    getThumbs(
       `https://thumbnails.roblox.com/v1/users/avatar?userIds=${userId}&size=720x720&format=Png&isCircular=false`,
       revalidateSeconds,
     ),
-    getJson<ThumbResponse>(
+    getThumbs(
       `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=420x420&format=Png&isCircular=false`,
       revalidateSeconds,
     ),
@@ -194,7 +212,7 @@ export async function fetchPeople(userIds: number[], revalidateSeconds: number):
       ),
     ),
     Promise.all(ids.map((id) => getJson<{ count?: unknown }>(`https://friends.roblox.com/v1/users/${id}/followers/count`, revalidateSeconds))),
-    getJson<ThumbResponse>(
+    getThumbs(
       `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${ids.join(",")}&size=420x420&format=Png&isCircular=false`,
       revalidateSeconds,
     ),
