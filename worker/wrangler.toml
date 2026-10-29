@@ -1,0 +1,5 @@
+name = "tapecti-roblox-stats"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# No bindings, no secrets, no storage: this only relays public Roblox figures.

@@ -23,8 +23,17 @@ export const site = {
   },
   /** Stats are cached server-side and refreshed in the browser at this interval. */
   metricsRefreshSeconds: 60,
+  /*
+   * On a static host the figures are baked in at build time, so the browser
+   * refreshes them from the stats worker instead: Roblox itself cannot be
+   * called from a page, since it sends no CORS headers. Unset means the page
+   * shows the build's figures and nothing more.
+   */
+  statsWorkerUrl: process.env.NEXT_PUBLIC_STATS_WORKER_URL ?? "",
   /** Whether the browser may refresh the figures itself. */
-  liveMetrics: !staticExport,
+  get liveMetrics() {
+    return !staticExport || this.statsWorkerUrl !== "";
+  },
   /** How the page describes where its figures come from. */
   get metricsNote() {
     return this.liveMetrics

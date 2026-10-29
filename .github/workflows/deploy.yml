@@ -58,6 +58,9 @@ jobs:
           NEXT_PUBLIC_STATIC_EXPORT: "1"
           NEXT_PUBLIC_BASE_PATH: ${{ steps.url.outputs.base_path }}
           NEXT_PUBLIC_SITE_URL: ${{ steps.url.outputs.site_url }}
+          # The stats worker's /stats URL, as a repository variable. Without it the page
+          # shows this build's figures; with it the browser keeps them up to date.
+          NEXT_PUBLIC_STATS_WORKER_URL: ${{ vars.STATS_WORKER_URL }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

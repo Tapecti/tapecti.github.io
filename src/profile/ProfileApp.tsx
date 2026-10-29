@@ -6,6 +6,7 @@ import { site } from "@/config/site";
 import { creations } from "@/data/creations";
 import { experiences } from "@/data/projects";
 import type { StatsPayload } from "@/lib/metrics";
+import type { UniverseStats } from "@/lib/roblox";
 import { basePath, experiencePath, homePath, idFromPathname } from "@/lib/paths";
 import { isConfigured } from "@/lib/placeholder";
 import type { ProfileData } from "@/lib/profile-data";
@@ -55,6 +56,43 @@ function lockScroll(locked: boolean) {
   root.style.overflow = locked ? "hidden" : "";
 }
 
+type LiveStats = Record<string, Partial<UniverseStats>>;
+
+/** This site's own endpoint, where the host can run code. */
+async function fromRoute(): Promise<LiveStats | null> {
+  // Trailing slash and base path both matter: without them this redirects, or 404s under /<repo>.
+  const response = await fetch(`${basePath}/api/metrics/`);
+  if (!response.ok) return null;
+  const payload = (await response.json()) as StatsPayload;
+  return Object.fromEntries(Object.entries(payload.experiences).flatMap(([id, value]) => (value ? [[id, value]] : [])));
+}
+
+/** The stats worker, which relays Roblox by universe and knows nothing about this site. */
+async function fromWorker(): Promise<LiveStats | null> {
+  const ids = [...new Set(experiences.map((e) => e.universeId))];
+  const response = await fetch(`${site.statsWorkerUrl}?universeIds=${ids.join(",")}`);
+  if (!response.ok) return null;
+  const payload = (await response.json()) as { universes?: Record<string, Partial<UniverseStats>> };
+  if (!payload.universes) return null;
+  return Object.fromEntries(
+    experiences.flatMap((e) => {
+      const live = payload.universes?.[e.universeId];
+      return live ? [[e.id, live]] : [];
+    }),
+  );
+}
+
+/** Live figures over the known ones, leaving anything the source omitted untouched. */
+function mergeStats(previous: StatsPayload["experiences"], live: LiveStats): StatsPayload["experiences"] {
+  const next = { ...previous };
+  for (const [id, figures] of Object.entries(live)) {
+    const before = next[id];
+    if (before) next[id] = { ...before, ...figures };
+    else if (figures.universeId) next[id] = figures as UniverseStats;
+  }
+  return next;
+}
+
 function idFromPath(pathname: string): string | null {
   const id = idFromPathname(pathname);
   return id && experiences.some((e) => e.id === id) ? id : null;
@@ -75,23 +113,17 @@ export function ProfileApp({ data, initialExperienceId }: Props) {
     const load = async () => {
       if (document.visibilityState !== "visible") return;
       try {
-        // Trailing slash and base path both matter: without them this redirects, or 404s under /<repo>.
-        const response = await fetch(`${basePath}/api/metrics/`);
-        if (!response.ok) return;
-        const payload = (await response.json()) as StatsPayload;
-        if (!cancelled) {
-          // Keep the last good figures for any experience Roblox didn't return this time.
-          setStats((prev) => {
-            const next = { ...prev };
-            for (const [id, value] of Object.entries(payload.experiences)) if (value) next[id] = value;
-            return next;
-          });
-        }
+        const fresh = site.statsWorkerUrl ? await fromWorker() : await fromRoute();
+        // Only the figures move; thumbnails, descriptions and anything the
+        // source leaves out keep the values the page was built with.
+        if (!cancelled && fresh) setStats((prev) => mergeStats(prev, fresh));
       } catch {
-        // Offline or blocked: the server-rendered figures stay on screen.
+        // Offline or blocked: the figures already on screen stay.
       }
     };
     if (!site.liveMetrics) return;
+    // Straight away, so a visitor sees today's numbers rather than the build's.
+    void load();
     const interval = window.setInterval(load, site.metricsRefreshSeconds * 1000);
     document.addEventListener("visibilitychange", load);
     return () => {

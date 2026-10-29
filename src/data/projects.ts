@@ -67,6 +67,24 @@ export const experiences: Experience[] = [
 
   // Earlier games, kept for the record.
   {
+    id: "clear-the-pixels",
+    title: "Clear The Pixels",
+    role: "Lead Scripter",
+    universeId: "10773535394",
+    groupId: 33519959,
+    placeUrl: "https://www.roblox.com/games/124594753591595/Clear-The-Pixels",
+    archive: true,
+  },
+  {
+    id: "roll-a-pickaxe",
+    title: "Roll a Pickaxe",
+    role: "Lead Scripter",
+    universeId: "10773531847",
+    groupId: 33519959,
+    placeUrl: "https://www.roblox.com/games/104211263764424/Roll-a-Pickaxe",
+    archive: true,
+  },
+  {
     id: "clean-the-rooms",
     title: "Clean The Rooms",
     role: "Lead Scripter",
