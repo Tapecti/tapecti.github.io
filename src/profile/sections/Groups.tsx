@@ -12,21 +12,29 @@ import { VerifiedBadge } from "../VerifiedBadge";
 import { SectionHead } from "./SectionHead";
 import styles from "./Groups.module.css";
 
-type Row = { info: RobloxGroup; games: Experience[]; visits: number };
+type Row = { info: RobloxGroup; games: Experience[]; playing: number; visits: number };
 
 export function Groups() {
   const { data, group, stats, images, open } = useProfile();
   const visitsOf = (experience: Experience) => stats[experience.id]?.visits ?? 0;
 
-  // Every group a game was published under, biggest body of work first.
+  const playingIn = (experience: Experience) => stats[experience.id]?.playing ?? 0;
+
+  /*
+   * Every group a game was published under, most games first: a body of work
+   * outranks a single game. Groups level on games are split by the players in
+   * them right now, then by visits, so two quiet groups never swap places at
+   * random.
+   */
   const rows = [...new Set(experiences.flatMap((e) => (e.groupId ? [e.groupId] : [])))]
     .flatMap((id): Row[] => {
       const info = group(id);
       if (!info) return [];
       const games = experiences.filter((e) => e.groupId === id).sort((a, b) => visitsOf(b) - visitsOf(a));
-      return [{ info, games, visits: games.reduce((sum, e) => sum + visitsOf(e), 0) }];
+      const sum = (of: (e: Experience) => number) => games.reduce((total, e) => total + of(e), 0);
+      return [{ info, games, playing: sum(playingIn), visits: sum(visitsOf) }];
     })
-    .sort((a, b) => b.visits - a.visits);
+    .sort((a, b) => b.games.length - a.games.length || b.playing - a.playing || b.visits - a.visits);
   if (rows.length === 0) return null;
 
   const onOpen = (id: string) => (event: MouseEvent<HTMLElement>) => {
