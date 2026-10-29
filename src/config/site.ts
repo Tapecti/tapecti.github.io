@@ -21,8 +21,12 @@ export const site = {
     const record = peak > 0 ? `, a peak of ${formatExact(peak)} concurrent players` : "";
     return `${profile.displayName} is a verified Roblox ${this.role.toLowerCase()}: ${experiences.length} shipped games${record}.`;
   },
-  /** Stats are cached server-side and refreshed in the browser at this interval. */
-  metricsRefreshSeconds: 60,
+  /*
+   * How often the browser asks for figures again. Roblox's own numbers move
+   * every 5 to 15 seconds, so half a minute keeps the page close without
+   * hammering anything. The stats worker caches for 10 seconds on top.
+   */
+  metricsRefreshSeconds: 30,
   /*
    * On a static host the figures are baked in at build time, so the browser
    * refreshes them from the stats worker instead: Roblox itself cannot be

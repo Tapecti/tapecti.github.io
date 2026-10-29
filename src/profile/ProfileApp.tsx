@@ -70,7 +70,8 @@ async function fromRoute(): Promise<LiveStats | null> {
 /** The stats worker, which relays Roblox by universe and knows nothing about this site. */
 async function fromWorker(): Promise<LiveStats | null> {
   const ids = [...new Set(experiences.map((e) => e.universeId))];
-  const response = await fetch(`${site.statsWorkerUrl}?universeIds=${ids.join(",")}`);
+  // Never the browser's own copy: a reload should show what Roblox says now, not what it said a moment ago.
+  const response = await fetch(`${site.statsWorkerUrl}?universeIds=${ids.join(",")}`, { cache: "no-store" });
   if (!response.ok) return null;
   const payload = (await response.json()) as { universes?: Record<string, Partial<UniverseStats>> };
   if (!payload.universes) return null;

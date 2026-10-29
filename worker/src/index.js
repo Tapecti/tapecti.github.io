@@ -17,8 +17,12 @@
 const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?tapecti\.com$/, /^https:\/\/tapecti\.github\.io$/, /^http:\/\/localhost:\d+$/];
 /** Enough for every game on the site, and a cap so this can't be used as a general proxy. */
 const MAX_IDS = 40;
-/** Seconds the edge keeps a reply. Short enough to feel live, long enough to shield Roblox from bursts. */
-const CACHE_SECONDS = 20;
+/*
+ * Seconds the edge keeps a reply. Roblox's own figures move every 5 to 15
+ * seconds, so anything longer is staleness the visitor can see; anything
+ * shorter stops shielding Roblox from bursts.
+ */
+const CACHE_SECONDS = 10;
 /** One key holds the watched games and their records, so a sample is one read and, rarely, one write. */
 const STATE_KEY = "state";
 
