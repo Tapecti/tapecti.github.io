@@ -49,6 +49,8 @@ export type UniverseStats = {
   creator?: { id: number; name: string; type: string; verified: boolean };
   /** Game thumbnails in the order set on Roblox. */
   images: string[];
+  /** The highest `playing` the stats worker has ever sampled for this game. Roblox publishes no historical peak. */
+  peak?: number;
 };
 
 type GamesResponse = {

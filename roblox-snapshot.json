@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-10-29T19:05:05.836Z",
+  "savedAt": "2026-10-29T19:29:59.459Z",
   "user": {
     "id": 5299412295,
     "name": "Tapecti",
@@ -14,7 +14,7 @@
       "name": "CRAZAY APS",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 216,
+      "memberCount": 226,
       "rank": {
         "name": "Member",
         "value": 1
@@ -50,7 +50,7 @@
       "name": "CRAZAY FOODS",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 131590,
+      "memberCount": 131592,
       "rank": {
         "name": "Member",
         "value": 1
@@ -86,7 +86,7 @@
       "name": "Super Fun Noob Games",
       "verified": true,
       "ownerId": 23899869,
-      "memberCount": 1139407,
+      "memberCount": 1139432,
       "rank": {
         "name": "Admin",
         "value": 254
@@ -122,7 +122,7 @@
       "name": "Crazay Houses",
       "verified": false,
       "ownerId": 382906892,
-      "memberCount": 94676,
+      "memberCount": 94679,
       "rank": {
         "name": "Member",
         "value": 1
@@ -134,7 +134,7 @@
       "name": "Debt Builders",
       "verified": true,
       "ownerId": 382906892,
-      "memberCount": 984509,
+      "memberCount": 984508,
       "rank": {
         "name": "Member",
         "value": 1
@@ -204,9 +204,9 @@
     "my-asmr-house": {
       "universeId": "10586746293",
       "description": "My ASMR House 🏠🎧\n\n☀️ Daytime\nYou’re safe… for now.\n🛋️ Drag ASMR furniture back to your house\n🚪 Unlock new rooms\n💰 Earn cash from your ASMR collection\n\n🌙 But at night...\nThe Monsters are outside… \n🔒 Stay inside your ASMR House\n👹 Don’t let the Monsters find you!\n\n👍 LIKE + ⭐ FAVORITE to survive the next update!",
-      "playing": 2071,
-      "visits": 19511728,
-      "favorites": 83135,
+      "playing": 2146,
+      "visits": 19515222,
+      "favorites": 83149,
       "created": "2026-07-28T17:41:23.639Z",
       "updated": "2026-10-24T16:39:35.786Z",
       "maxPlayers": 7,
@@ -223,15 +223,15 @@
         "https://tr.rbxcdn.com/180DAY-a3bff1a0f5fa23d63dec772ac650e634/768/432/Image/Png/noFilter",
         "https://tr.rbxcdn.com/180DAY-8c6f70ce238745f869a979575a2b4bbd/768/432/Image/Png/noFilter"
       ],
-      "likes": 43568,
-      "dislikes": 2573
+      "likes": 43574,
+      "dislikes": 2574
     },
     "driving-test": {
       "universeId": "9273584416",
       "description": "🚗 Welcome to Driving Test! Can you pass the ultimate driving exam? 🚗 \n\nDrive through challenging courses, avoid obstacles, and park perfectly to complete each stage. Every level tests your precision, control, and patience. This obby is made to make you a better driver!\n\n⭐ Unlock new cars\n🚘 Complete challenging parking courses\n🏆 Beat every stage\n🔥 Can you pass the final test?\n\n\nTags: Drive Car Challenge OBBY",
-      "playing": 172,
-      "visits": 15942534,
-      "favorites": 658027,
+      "playing": 145,
+      "visits": 15943035,
+      "favorites": 658048,
       "created": "2025-11-30T13:46:11.667Z",
       "updated": "2026-09-12T14:45:16.825Z",
       "maxPlayers": 8,
@@ -336,8 +336,8 @@
     "clear-the-pixels": {
       "universeId": "10773535394",
       "description": "Welcome to Clear The Pixels!\n\nBreak millions of Pixels, upgrade your Balls, and reveal hidden worlds! 🌎✨\n\n**🎮 How to Play:**\n\n💥 Shoot Balls to break Pixels  \n💰 Earn Cash from broken Pixels  \n⚡ Upgrade your Balls to break faster  \n🎨 Reveal hidden Pixel Art  \n🌎 Unlock new Worlds  \n🏆 Clear all the Pixels!\n\n👍 Like the game and join the group for FREE rewards!",
-      "playing": 14,
-      "visits": 2151,
+      "playing": 13,
+      "visits": 2225,
       "favorites": 11,
       "created": "2026-10-28T18:20:18.178Z",
       "updated": "2026-10-29T18:50:12.523Z",
@@ -358,8 +358,8 @@
     "roll-a-pickaxe": {
       "universeId": "10773531847",
       "description": "⛏️ Welcome to **Roll a Pickaxe!** 💎\n\nRoll for powerful Pickaxes, mine valuable Ores, and discover rare Pickaxes to become the ultimate miner! ⚡✨\n\n**🎮 How to Play:**\n\n🎲 Roll for new Pickaxes with different rarities  \n⛏️ Equip your strongest Pickaxe to mine Ores  \n💎 Break blocks and discover valuable treasures  \n💰 Sell your Ores to earn Cash  \n🍀 Upgrade your Luck to roll even rarer Pickaxes  \n🌎 Unlock new areas with better Ores  \n🏆 Collect the rarest Pickaxes and complete your Index!\n\n❤️ Like the game and join the group for FREE rewards!",
-      "playing": 3,
-      "visits": 730,
+      "playing": 0,
+      "visits": 743,
       "favorites": 3,
       "created": "2026-10-28T17:54:20.731Z",
       "updated": "2026-10-29T18:53:04.282Z",
@@ -379,8 +379,8 @@
     },
     "clean-the-rooms": {
       "universeId": "10400326382",
-      "playing": 10,
-      "visits": 389030,
+      "playing": 11,
+      "visits": 389065,
       "favorites": 1657,
       "created": "2026-06-26T23:10:59.495Z",
       "updated": "2026-10-28T18:21:10.213Z",
@@ -424,8 +424,8 @@
       "universeId": "9223627423",
       "description": "🧱 STACK BATTLES – 1v1 Precision Showdown! ⚔️\n\nFace off in a fast-paced duel where every block matters.\nTake turns dropping pieces and try to build the tallest, cleanest tower without messing up.\nMiss the edge? Your stack gets smaller.\nPlay smarter, stay steady, and out-stack your opponent to win!\n\nPerfect timing. Zero mistakes. One champion. 🏆",
       "playing": 2,
-      "visits": 3935154,
-      "favorites": 395627,
+      "visits": 3935164,
+      "favorites": 395629,
       "created": "2025-11-22T16:11:23.01Z",
       "updated": "2026-09-16T16:13:53.89Z",
       "maxPlayers": 20,
@@ -741,83 +741,83 @@
     }
   },
   "studio": {
-    "playing": 109840,
-    "visits": 6853865559,
+    "playing": 108665,
+    "visits": 6854016775,
     "games": 42,
     "top": [
       {
         "name": "Fisch",
         "url": "https://www.roblox.com/games/16732694052",
         "image": "https://tr.rbxcdn.com/180DAY-a2846a75df26a929cc2f526aecdfaef9/768/432/Image/Png/noFilter",
-        "playing": 54460
+        "playing": 54530
       },
       {
         "name": "Hide to Steal Eggs",
         "url": "https://www.roblox.com/games/138903917604369",
         "image": "https://tr.rbxcdn.com/180DAY-7d106bce9db24fabafa13ec26edba418/768/432/Image/Png/noFilter",
-        "playing": 11548
+        "playing": 11177
       },
       {
         "name": "Prison Dodgeball",
         "url": "https://www.roblox.com/games/127270254210112",
         "image": "https://tr.rbxcdn.com/180DAY-3fa77e7ebae17caddbd89f35d157586f/768/432/Image/Png/noFilter",
-        "playing": 7688
+        "playing": 7629
       },
       {
         "name": "Lift Rock For Eggs",
         "url": "https://www.roblox.com/games/76731343328034",
         "image": "https://tr.rbxcdn.com/180DAY-ae0fec3d87e311189536658bf9751b7f/768/432/Image/Png/noFilter",
-        "playing": 4015
+        "playing": 3799
       },
       {
         "name": "+1 Pickaxe Swing for Eggs",
         "url": "https://www.roblox.com/games/109419302424115",
         "image": "https://tr.rbxcdn.com/180DAY-222d2121ed5ad348015192250e3a5cd5/768/432/Image/Png/noFilter",
-        "playing": 3735
+        "playing": 3594
       },
       {
         "name": "Hack Vault for Eggs",
         "url": "https://www.roblox.com/games/123673291357707",
         "image": "https://tr.rbxcdn.com/180DAY-923ece84b24f74ef2d376319dca09f6d/768/432/Image/Png/noFilter",
-        "playing": 3462
+        "playing": 3470
       },
       {
         "name": "Escape Waves For Lucky Blocks",
         "url": "https://www.roblox.com/games/119579217517090",
         "image": "https://tr.rbxcdn.com/180DAY-f4223fe8af3bcebb764f5202fa42c9bd/768/432/Image/Png/noFilter",
-        "playing": 3161
+        "playing": 3082
       },
       {
         "name": "Break a Brainrot Lucky Block",
         "url": "https://www.roblox.com/games/136993518427368",
         "image": "https://tr.rbxcdn.com/180DAY-9a44981bce49feb29d9ff62c1d1af3a4/768/432/Image/Png/noFilter",
-        "playing": 3070
-      },
-      {
-        "name": "Jump For Eggs",
-        "url": "https://www.roblox.com/games/84272213941033",
-        "image": "https://tr.rbxcdn.com/180DAY-6d393c7233e3eab31af0ce6bc34fb038/768/432/Image/Png/noFilter",
-        "playing": 2206
+        "playing": 2983
       },
       {
         "name": "Grow a Tail for Eggs",
         "url": "https://www.roblox.com/games/99977672387884",
         "image": "https://tr.rbxcdn.com/180DAY-563c8e6a065158c7afadd1a8e70ea8a4/768/432/Image/Png/noFilter",
-        "playing": 2163
+        "playing": 2164
       },
       {
         "name": "My ASMR House",
         "url": "https://www.roblox.com/games/113460023824827",
         "image": "https://tr.rbxcdn.com/180DAY-90a0571a0605ade0c1761b0d0fa20a87/768/432/Image/Png/noFilter",
-        "playing": 2070
+        "playing": 2146
+      },
+      {
+        "name": "Jump For Eggs",
+        "url": "https://www.roblox.com/games/84272213941033",
+        "image": "https://tr.rbxcdn.com/180DAY-6d393c7233e3eab31af0ce6bc34fb038/768/432/Image/Png/noFilter",
+        "playing": 2123
       },
       {
         "name": "Fat for Eggs",
         "url": "https://www.roblox.com/games/114616252068006",
         "image": "https://tr.rbxcdn.com/180DAY-c52ba0a771b1ac3a536fa065e24b691b/768/432/Image/Png/noFilter",
-        "playing": 1783
+        "playing": 1694
       }
     ],
-    "updatedAt": "2026-10-29T19:05:01.852Z"
+    "updatedAt": "2026-10-29T19:29:55.339Z"
   }
 }

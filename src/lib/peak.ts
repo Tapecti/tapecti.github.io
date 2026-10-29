@@ -6,15 +6,17 @@ export type PeakFigure = { value: number; atLeast?: boolean };
 type Stats = Record<string, UniverseStats | undefined>;
 
 /**
- * Peak CCU can never be lower than what is live right now. The stated peak
- * is the floor; a game playing above it raises its peak, so the profile
- * never shows more players in a game than its record.
+ * Peak CCU can never be lower than what is live right now, nor lower than a
+ * figure already reached. Three sources, highest wins: the stated peak, the
+ * record the stats worker has sampled since it went up, and the players in
+ * the game at this moment.
  */
 function raisedPeak(experience: Experience, stats: Stats): PeakFigure | undefined {
-  const stated = experience.peakCCU;
-  const live = stats[experience.id]?.playing ?? 0;
-  if (stated && stated.value >= live) return stated;
-  return live > 0 ? { value: live } : undefined;
+  const live = stats[experience.id];
+  const best = Math.max(experience.peakCCU?.value ?? 0, live?.peak ?? 0, live?.playing ?? 0);
+  if (best <= 0) return undefined;
+  // "At least" belonged to the stated figure, and only while it still stands.
+  return best === experience.peakCCU?.value ? experience.peakCCU : { value: best };
 }
 
 /** The highest peak across every game, and the game that set it. */

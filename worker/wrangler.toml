@@ -2,4 +2,13 @@ name = "tapecti-roblox-stats"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 
-# No bindings, no secrets, no storage: this only relays public Roblox figures.
+# The peak each game has ever reached, as sampled by this worker. No keys, no
+# personal data: just a number per universe id.
+[[kv_namespaces]]
+binding = "PEAKS"
+id = "67245b08c23d464dac1ebaeaea9205fc"
+
+# Roblox never publishes a historical peak, so one is built by sampling. Every
+# five minutes is frequent enough to catch a spike and far inside the free plan.
+[triggers]
+crons = ["*/5 * * * *"]
