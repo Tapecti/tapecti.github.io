@@ -7,6 +7,7 @@ import type { Experience } from "@/data/types";
 import { formatCompact } from "@/lib/format";
 import { shown } from "@/lib/placeholder";
 import { getProfileData } from "@/lib/profile-data";
+import { personSchema } from "@/lib/schema";
 import { ProfileApp } from "@/profile/ProfileApp";
 
 type Params = { path?: string[] };
@@ -74,5 +75,13 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (!route) notFound();
   const data = await getProfileData();
 
-  return <ProfileApp data={data} initialExperienceId={route.kind === "experience" ? route.experience.id : undefined} />;
+  return (
+    <>
+      {/* Only on the profile itself, so one page says who this is rather than twenty-five. */}
+      {route.kind === "profile" && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema()) }} />
+      )}
+      <ProfileApp data={data} initialExperienceId={route.kind === "experience" ? route.experience.id : undefined} />
+    </>
+  );
 }

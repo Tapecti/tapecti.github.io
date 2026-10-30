@@ -1,5 +1,3 @@
-import { experiences } from "@/data/projects";
-import { formatExact } from "@/lib/format";
 import { profile } from "./profile";
 
 /**
@@ -12,14 +10,20 @@ export const site = {
   /** Production origin, e.g. "https://example.com". Used for canonical URLs and share images. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "[site_url]",
   role: "Scripter",
-  get title() {
-    return `${profile.displayName}, ${this.role}`;
+  /** The title carries the trade, since "Scripter" alone means nothing to a search engine. */
+  get titleRole() {
+    return `Roblox ${this.role}`;
   },
-  /** Facts only, for search results and link previews. */
+  get title() {
+    return `${profile.displayName}, ${this.titleRole}`;
+  },
+  /*
+   * Facts only, for search results and link previews. Deliberately free of
+   * live figures: a search engine keeps a description for months, and a
+   * number that was true at the crawl reads as a lie by the time it is shown.
+   */
   get description() {
-    const peak = Math.max(0, ...experiences.map((e) => e.peakCCU?.value ?? 0));
-    const record = peak > 0 ? `, a peak of ${formatExact(peak)} concurrent players` : "";
-    return `${profile.displayName} is a verified Roblox ${this.role.toLowerCase()}: ${experiences.length} shipped games${record}.`;
+    return `${profile.displayName} is a verified Roblox ${this.role.toLowerCase()}. Every game here is scripted by ${profile.displayName}, with player counts, visits and ratings read live from Roblox.`;
   },
   /*
    * How often the browser asks for figures again. Roblox's own numbers move
